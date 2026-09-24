@@ -1,0 +1,2066 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');/* =========================================================
+   TASTYLOOP ADMIN — ORDERS
+   FINAL UI POLISH
+========================================================= */
+
+
+/* =========================================================
+   PAGE BASE
+========================================================= */
+
+.orders-page {
+  font-family: "DM Sans", Arial, sans-serif;
+  color: var(--text);
+}
+
+.orders-page h1,
+.orders-page h2,
+.orders-page h3 {
+  font-family: "Plus Jakarta Sans", "DM Sans", Arial, sans-serif;
+}
+
+/* =========================================================
+   ORDERS HEADING
+========================================================= */
+
+.orders-heading {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+}
+
+.orders-heading-left {
+  min-width: 0;
+}
+
+.orders-heading-left .eyebrow {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-family: "DM Sans", Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .08em;
+
+  color: var(--primary);
+}
+
+.orders-heading-left h1 {
+  margin: 0;
+
+  font-family:
+    "Plus Jakarta Sans",
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  font-size: 30px;
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  letter-spacing: -.5px;
+
+  color: var(--text-dark);
+}
+
+.orders-heading-left p {
+  margin: 7px 0 0;
+
+  font-family: "DM Sans", Arial, sans-serif;
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   ORDER STATS
+========================================================= */
+
+.order-mini-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+.order-mini-card {
+  min-height: 78px;
+
+  padding: 15px 18px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.order-mini-card:hover {
+  transform: translateY(-1px);
+
+  box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   STAT ICONS
+========================================================= */
+
+.order-mini-card .mini-icon,
+.order-mini-card .stat-icon,
+.order-mini-card .order-stat-icon {
+  width: 42px !important;
+  height: 42px !important;
+
+  flex: 0 0 42px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border-radius: 12px !important;
+
+  background: var(--primary-light) !important;
+
+  color: var(--primary) !important;
+
+  font-size: 15px !important;
+}
+
+
+/* icon itself */
+
+.order-mini-card .mini-icon i,
+.order-mini-card .stat-icon i,
+.order-mini-card .order-stat-icon i {
+  color: inherit !important;
+
+  font-size: 14px !important;
+}
+
+
+/* SECOND */
+
+.order-mini-card:nth-child(2) .mini-icon,
+.order-mini-card:nth-child(2) .stat-icon,
+.order-mini-card:nth-child(2) .order-stat-icon {
+  background: #fff5df !important;
+  color: #d98a00 !important;
+}
+
+
+/* THIRD */
+
+.order-mini-card:nth-child(3) .mini-icon,
+.order-mini-card:nth-child(3) .stat-icon,
+.order-mini-card:nth-child(3) .order-stat-icon {
+  background: #eaf4ff !important;
+  color: #2376bd !important;
+}
+
+
+/* FOURTH */
+
+.order-mini-card:nth-child(4) .mini-icon,
+.order-mini-card:nth-child(4) .stat-icon,
+.order-mini-card:nth-child(4) .order-stat-icon {
+  background: #eaf8ef !important;
+  color: #21834b !important;
+}
+
+
+/* =========================================================
+   STAT TEXT
+========================================================= */
+
+.order-mini-card strong {
+  display: block;
+
+  margin: 0;
+
+  font-family:
+    "Plus Jakarta Sans",
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  font-size: 20px;
+
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  color: var(--text-dark);
+}
+
+.order-mini-card span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-family: "DM Sans", Arial, sans-serif;
+
+  font-size: 10px;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.orders-toolbar {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px;
+
+  margin-bottom: 18px;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* SEARCH */
+
+.order-search {
+  position: relative;
+
+  flex: 1;
+
+  min-width: 0;
+}
+
+.order-search i {
+  position: absolute;
+
+  left: 14px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  pointer-events: none;
+}
+
+.order-search input {
+  width: 100%;
+  height: 42px;
+
+  box-sizing: border-box;
+
+  padding: 0 14px 0 38px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: var(--surface-soft);
+
+  color: var(--text);
+
+  font-family: "DM Sans", Arial, sans-serif;
+
+  font-size: 12px;
+}
+
+.order-search input::placeholder {
+  color: var(--muted-light);
+}
+
+.order-search input:focus {
+  border-color: var(--primary);
+
+  background: var(--surface);
+
+  box-shadow:
+    0 0 0 3px var(--primary-light);
+}
+
+
+/* FILTER */
+
+.order-filter {
+  width: 165px;
+
+  flex: 0 0 165px;
+}
+
+.order-filter select {
+  width: 100%;
+  height: 42px;
+
+  box-sizing: border-box;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: var(--surface-soft);
+
+  color: var(--text);
+
+  font-family: "DM Sans", Arial, sans-serif;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.orders-table-wrap {
+  width: 100%;
+
+  overflow-x: auto;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.orders-table {
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+/* HEADER */
+
+.orders-table th {
+  height: 42px;
+
+  padding: 0 16px;
+
+  background: var(--surface-soft);
+
+  border-bottom: 1px solid var(--border);
+
+  text-align: left;
+
+  font-family: "DM Sans", Arial, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+  color: var(--muted);
+}
+
+
+/* BODY */
+
+.orders-table td {
+  height: 66px;
+
+  padding: 11px 16px;
+
+  vertical-align: middle;
+
+  border-bottom: 1px solid var(--border);
+
+  font-family: "DM Sans", Arial, sans-serif;
+
+  font-size: 11px;
+
+  color: var(--text);
+}
+
+.orders-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.orders-table tbody tr {
+  transition: background .15s ease;
+}
+
+.orders-table tbody tr:hover {
+  background: #fbfcfd;
+}
+
+
+/* =========================================================
+   ORDER ID
+========================================================= */
+
+.order-id {
+  display: block;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  color: var(--text-dark);
+}
+
+.order-date {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 9px;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   CUSTOMER
+========================================================= */
+
+.customer-info strong {
+  display: block;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: var(--text-dark);
+}
+
+.customer-info span {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 9px;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   ITEMS + FOOD PHOTO
+========================================================= */
+
+.order-items {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 0;
+}
+
+.order-items img,
+.order-item-image {
+  width: 38px !important;
+  height: 38px !important;
+
+  flex: 0 0 38px !important;
+
+  object-fit: cover !important;
+
+  border-radius: 9px !important;
+
+  display: block !important;
+
+  border: 1px solid var(--border) !important;
+
+  background: var(--surface-soft) !important;
+}
+
+.order-item-text {
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+.order-item-text strong,
+.order-items-text {
+  display: block;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-size: 10px;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+
+.order-amount {
+  font-family:
+    "Plus Jakarta Sans",
+    "DM Sans",
+    Arial,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  color: var(--text-dark);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.order-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  min-height: 25px;
+
+  padding: 0 9px;
+
+  box-sizing: border-box;
+
+  border-radius: 7px;
+
+  white-space: nowrap;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.order-status i {
+  font-size: 5px;
+}
+
+.status-pending {
+  color: #946200;
+  background: #fff7d9;
+}
+
+.status-preparing {
+  color: #875000;
+  background: #fff0d5;
+}
+
+.status-delivery {
+  color: #155c9f;
+  background: #e8f3ff;
+}
+
+.status-delivered {
+  color: #167342;
+  background: #e9f8ef;
+}
+
+.status-cancelled {
+  color: #b42318;
+  background: #fdebea;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.order-view-btn {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  background: var(--surface);
+
+  color: var(--muted);
+
+  cursor: pointer;
+
+  transition: .2s ease;
+}
+
+.order-view-btn:hover {
+  background: var(--primary-light);
+
+  color: var(--primary);
+
+  border-color: #ffd3c8;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.orders-footer {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 13px;
+
+  font-family: "DM Sans", Arial, sans-serif;
+
+  font-size: 10px;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .order-mini-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .orders-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .order-filter {
+    width: 100%;
+    flex: 1;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .orders-heading-left h1 {
+    font-size: 26px;
+  }
+
+  .order-mini-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+}
+
+/* =========================================================
+   TOTAL ORDERS ICON — FINAL
+========================================================= */
+
+.order-mini-card:nth-child(2) .mini-icon,
+.order-mini-card:nth-child(2) .stat-icon,
+.order-mini-card:nth-child(2) .order-stat-icon {
+  width: 42px !important;
+  height: 42px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex: 0 0 42px !important;
+
+  border-radius: 12px !important;
+
+  background: #fff5df !important;
+  color: #d98a00 !important;
+
+  box-shadow: none !important;
+}
+
+.order-mini-card:nth-child(2) .mini-icon i,
+.order-mini-card:nth-child(2) .stat-icon i,
+.order-mini-card:nth-child(2) .order-stat-icon i {
+  color: #d98a00 !important;
+  font-size: 16px !important;
+}
+
+/* =========================================================
+   TOTAL ORDERS ICON — CLASSIC
+   ========================================================= */
+
+.order-mini-card:nth-child(1) .mini-icon,
+.order-mini-card:nth-child(1) .stat-icon,
+.order-mini-card:nth-child(1) .order-stat-icon {
+    background: #eef2f6 !important;
+    color: #344054 !important;
+    border: 1px solid #e1e6ed !important;
+}
+
+.order-mini-card:nth-child(1) .mini-icon i,
+.order-mini-card:nth-child(1) .stat-icon i,
+.order-mini-card:nth-child(1) .order-stat-icon i {
+    color: #344054 !important;
+    font-size: 15px !important;
+}
+
+
+/* TOTAL ORDERS CARD HOVER */
+.order-mini-card:nth-child(1):hover .mini-icon,
+.order-mini-card:nth-child(1):hover .stat-icon,
+.order-mini-card:nth-child(1):hover .order-stat-icon {
+    background: #e7edf4 !important;
+    border-color: #d5dde7 !important;
+}
+
+
+
+/* =========================================================
+   ORDER DETAILS MODAL
+========================================================= */
+
+.order-details-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(5px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity .2s ease,
+              visibility .2s ease;
+}
+
+.order-details-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.order-details-modal {
+  position: relative;
+
+  width: min(560px, 100%);
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  padding: 24px;
+
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.18);
+
+  transform: translateY(10px) scale(.98);
+
+  transition: transform .2s ease;
+}
+
+.order-details-overlay.show
+.order-details-modal {
+  transform: translateY(0) scale(1);
+}
+
+
+.order-details-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  background: var(--surface);
+  color: var(--muted);
+
+  cursor: pointer;
+
+  transition: .2s ease;
+}
+
+.order-details-close:hover {
+  color: var(--primary);
+  background: var(--primary-light);
+  border-color: #ffd3c8;
+}
+
+
+.order-details-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-right: 42px;
+
+  margin-bottom: 22px;
+}
+
+.order-details-eyebrow {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .9px;
+
+  color: var(--primary);
+}
+
+.order-details-top h2 {
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans",
+               "DM Sans",
+               Arial,
+               sans-serif;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  color: var(--text-dark);
+}
+
+.order-details-top p {
+  margin: 5px 0 0;
+
+  font-size: 11px;
+
+  color: var(--muted);
+}
+
+
+.order-details-status {
+  padding: 6px 10px;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  text-transform: capitalize;
+}
+
+
+.order-details-food {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 14px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--surface-soft);
+}
+
+.order-details-food img {
+  width: 72px;
+  height: 72px;
+
+  flex: 0 0 72px;
+
+  object-fit: cover;
+
+  border-radius: 11px;
+
+  border: 1px solid var(--border);
+}
+
+.order-details-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  color: var(--muted);
+}
+
+.order-details-food h3 {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  color: var(--text-dark);
+}
+
+.order-details-food p {
+  margin: 4px 0 0;
+
+  font-size: 11px;
+
+  color: var(--muted);
+}
+
+
+.order-details-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+}
+
+.order-details-info {
+  padding: 12px 13px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: var(--surface);
+}
+
+.order-details-info span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.order-details-info strong {
+  display: block;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  color: var(--text-dark);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.order-details-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 16px;
+
+  border-radius: 11px;
+
+  background: var(--primary-light);
+}
+
+.order-details-total span {
+  font-size: 11px;
+  font-weight: 700;
+
+  color: var(--muted);
+}
+
+.order-details-total strong {
+  font-size: 17px;
+  font-weight: 800;
+
+  color: var(--primary);
+}
+
+
+@media (max-width: 600px) {
+
+  .order-details-overlay {
+    padding: 14px;
+  }
+
+  .order-details-modal {
+    padding: 18px;
+  }
+
+  .order-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-details-food img {
+    width: 60px;
+    height: 60px;
+    flex-basis: 60px;
+  }
+
+}
+
+/* =========================================================
+   ORDER DETAILS — OPAQUE MODAL FIX
+========================================================= */
+
+.order-details-overlay {
+  background: rgba(15, 23, 42, 0.48) !important;
+}
+
+.order-details-modal {
+  background: #ffffff !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+
+  color: var(--text-dark);
+}
+
+.order-details-modal * {
+  opacity: 1;
+}
+
+.order-details-food {
+  background: #fafbfc !important;
+}
+
+.order-details-info {
+  background: #ffffff !important;
+}
+
+.order-details-top h2,
+.order-details-top p,
+.order-details-food h3,
+.order-details-food p,
+.order-details-info span,
+.order-details-info strong,
+.order-details-total span,
+.order-details-total strong {
+  opacity: 1 !important;
+}
+
+/* =========================================================
+   START COOKING ACTION — FINAL FIX
+========================================================= */
+
+.order-action-buttons {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+}
+
+
+.order-action-buttons .order-cook-btn {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  width: 34px !important;
+  height: 34px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 1px solid #ffd0c6 !important;
+  border-radius: 9px !important;
+
+  background: #fff1ed !important;
+  color: var(--primary) !important;
+
+  cursor: pointer !important;
+
+  opacity: 1 !important;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    transform .2s ease !important;
+}
+
+
+.order-action-buttons .order-cook-btn i {
+  color: var(--primary) !important;
+  opacity: 1 !important;
+}
+
+
+.order-action-buttons .order-cook-btn:hover {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+
+  border-color: var(--primary) !important;
+
+  opacity: 1 !important;
+
+  transform: translateY(-1px) !important;
+}
+
+
+.order-action-buttons .order-cook-btn:hover i {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   START COOKING MODAL — FINAL
+========================================================= */
+
+.cooking-time-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+
+  z-index: 10000 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 20px !important;
+
+  background: rgba(15, 23, 42, .48) !important;
+
+  backdrop-filter: blur(5px) !important;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+
+  transition: opacity .2s ease,
+              visibility .2s ease !important;
+}
+
+
+.cooking-time-overlay.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+.cooking-time-modal {
+  position: relative !important;
+
+  width: min(430px, 100%) !important;
+
+  padding: 24px !important;
+
+  background: #ffffff !important;
+
+  border: 1px solid var(--border) !important;
+  border-radius: 18px !important;
+
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, .18) !important;
+
+  box-sizing: border-box !important;
+}
+
+
+.cooking-time-close {
+  position: absolute !important;
+
+  top: 17px !important;
+  right: 17px !important;
+
+  width: 34px !important;
+  height: 34px !important;
+
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 1px solid var(--border) !important;
+  border-radius: 9px !important;
+
+  background: #ffffff !important;
+  color: var(--muted) !important;
+
+  cursor: pointer !important;
+}
+
+
+.cooking-food-preview {
+  display: flex !important;
+  align-items: center !important;
+
+  gap: 12px !important;
+
+  padding: 12px !important;
+  margin-bottom: 20px !important;
+
+  border: 1px solid var(--border) !important;
+  border-radius: 11px !important;
+
+  background: var(--surface-soft) !important;
+}
+
+
+.cooking-time-input-wrap {
+  display: flex !important;
+  align-items: center !important;
+
+  gap: 9px !important;
+
+  margin-bottom: 18px !important;
+}
+
+
+.cooking-time-input-wrap input {
+  width: 100% !important;
+  height: 44px !important;
+
+  box-sizing: border-box !important;
+
+  padding: 0 13px !important;
+
+  border: 1px solid var(--border) !important;
+  border-radius: 9px !important;
+
+  background: #ffffff !important;
+  color: var(--text-dark) !important;
+
+  outline: none !important;
+
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 13px !important;
+}
+
+
+.cooking-time-input-wrap input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px var(--primary-light) !important;
+}
+
+
+.cooking-time-input-wrap span {
+  flex-shrink: 0 !important;
+
+  color: var(--muted) !important;
+
+  font-size: 11px !important;
+}
+
+
+/* =========================================================
+   START COOKING SUBMIT BUTTON
+========================================================= */
+
+.cooking-time-modal .start-cooking-confirm {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  width: 100% !important;
+  min-width: 100% !important;
+
+  height: 44px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 8px !important;
+
+  padding: 0 16px !important;
+  margin: 0 !important;
+
+  border: 0 !important;
+  border-radius: 10px !important;
+
+  background: var(--primary) !important;
+  color: #ffffff !important;
+
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+
+  cursor: pointer !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  box-shadow:
+    0 7px 16px rgba(255, 90, 54, .18) !important;
+
+  transition:
+    background .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease !important;
+}
+
+
+.cooking-time-modal .start-cooking-confirm i {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+
+.cooking-time-modal .start-cooking-confirm:hover {
+  background: var(--primary-dark) !important;
+  color: #ffffff !important;
+
+  opacity: 1 !important;
+
+  transform: translateY(-1px) !important;
+
+  box-shadow:
+    0 9px 20px rgba(255, 90, 54, .22) !important;
+}
+
+
+.cooking-time-modal .start-cooking-confirm:hover i {
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   START COOKING MODAL — BUTTON
+========================================================= */
+
+.start-cooking-confirm {
+  width: 100% !important;
+  height: 46px !important;
+
+  margin-top: 20px !important;
+
+  border: 0 !important;
+  border-radius: 10px !important;
+
+  background: var(--primary) !important;
+  color: #ffffff !important;
+
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  cursor: pointer !important;
+
+  box-shadow: 0 8px 18px rgba(255, 90, 54, 0.18) !important;
+
+  transition:
+    background .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease !important;
+}
+
+.start-cooking-confirm:hover {
+  background: var(--primary-dark) !important;
+
+  transform: translateY(-1px) !important;
+
+  box-shadow: 0 10px 22px rgba(255, 90, 54, 0.24) !important;
+}
+
+.start-cooking-confirm i {
+  color: #ffffff !important;
+  font-size: 13px !important;
+}
+
+/* =========================================================
+   START COOKING CONFIRM BUTTON
+========================================================= */
+
+.start-cooking-confirm {
+  width: 100% !important;
+  height: 48px !important;
+  margin-top: 20px !important;
+  padding: 0 18px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  border: 0 !important;
+  border-radius: 10px !important;
+
+  background: var(--primary) !important;
+  color: #ffffff !important;
+
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+
+  cursor: pointer !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  box-shadow: 0 8px 18px rgba(255, 90, 54, 0.18) !important;
+}
+
+.start-cooking-confirm i {
+  display: inline-block !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.start-cooking-confirm:hover {
+  background: var(--primary-dark) !important;
+}   
+
+/* =========================================================
+   START COOKING — FINAL BUTTON FIX
+========================================================= */
+
+.cooking-time-modal #startCookingConfirm {
+  width: 100% !important;
+  height: 46px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  gap: 8px !important;
+  padding: 0 16px !important;
+  margin: 20px 0 0 !important;
+
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  border: 0 !important;
+  border-radius: 10px !important;
+
+  background: #ff5a36 !important;
+  color: #ffffff !important;
+
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+
+  line-height: 1 !important;
+  text-align: center !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  cursor: pointer !important;
+
+  box-shadow: 0 8px 18px rgba(255, 90, 54, 0.18) !important;
+}
+
+.cooking-time-modal #startCookingConfirm span {
+  display: inline-block !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.cooking-time-modal #startCookingConfirm i {
+  display: inline-block !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.cooking-time-modal #startCookingConfirm:hover {
+  background: #e64a2e !important;
+  color: #ffffff !important;
+}
+
+.cooking-time-modal #startCookingConfirm:hover span,
+.cooking-time-modal #startCookingConfirm:hover i {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* =========================================================
+   ORDER ACTION — START COOKING ICON FINAL FIX
+========================================================= */
+
+.order-action-buttons .order-cook-btn {
+  color: #ff5a36 !important;
+  background: #fff1ed !important;
+  border: 1px solid #ffd0c6 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  width: 34px !important;
+  height: 34px !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.order-action-buttons .order-cook-btn i,
+.order-action-buttons .order-cook-btn .fa-fire-burner {
+  display: inline-block !important;
+
+  color: #ff5a36 !important;
+  -webkit-text-fill-color: #ff5a36 !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  font-size: 13px !important;
+  line-height: 1 !important;
+}
+
+/* HOVER */
+.order-action-buttons .order-cook-btn:hover {
+  background: #ff5a36 !important;
+  border-color: #ff5a36 !important;
+  color: #ffffff !important;
+}
+
+.order-action-buttons .order-cook-btn:hover i,
+.order-action-buttons .order-cook-btn:hover .fa-fire-burner {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}   
+
+/* =========================================================
+   START COOKING MODAL — PREMIUM UI
+========================================================= */
+
+.cooking-time-overlay {
+  background: rgba(15, 23, 42, 0.58) !important;
+  backdrop-filter: blur(7px) !important;
+  -webkit-backdrop-filter: blur(7px) !important;
+}
+
+.cooking-time-modal {
+  width: min(450px, calc(100% - 30px)) !important;
+  padding: 28px !important;
+
+  background: #ffffff !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  border-radius: 22px !important;
+
+  box-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.20),
+    0 8px 25px rgba(15, 23, 42, 0.08) !important;
+
+  color: #172033 !important;
+}
+
+/* Close button */
+.cooking-time-modal .cooking-time-close {
+  width: 36px !important;
+  height: 36px !important;
+
+  border: 1px solid #e7ebf1 !important;
+  border-radius: 10px !important;
+
+  background: #f8fafc !important;
+  color: #64748b !important;
+
+  transition: all .2s ease !important;
+}
+
+.cooking-time-modal .cooking-time-close:hover {
+  background: #fff1ed !important;
+  border-color: #ffd0c6 !important;
+  color: #ff5a36 !important;
+  transform: rotate(4deg) !important;
+}
+
+/* Small heading */
+.cooking-time-modal .cooking-time-eyebrow {
+  display: block !important;
+
+  margin-bottom: 5px !important;
+
+  color: #ff5a36 !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: .12em !important;
+}
+
+/* Main title */
+.cooking-time-modal h2 {
+  margin: 0 0 4px !important;
+
+  color: #172033 !important;
+
+  font-family:
+    "Plus Jakarta Sans",
+    "DM Sans",
+    Arial,
+    sans-serif !important;
+
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+}
+
+/* Order ID / restaurant */
+.cooking-time-modal .cooking-time-order {
+  margin: 0 0 20px !important;
+
+  color: #64748b !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+/* Food preview */
+.cooking-time-modal .cooking-food-preview {
+  min-height: 108px !important;
+
+  padding: 12px !important;
+
+  border: 1px solid #e7ebf1 !important;
+  border-radius: 14px !important;
+
+  background: #f8fafc !important;
+
+  gap: 14px !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.8) !important;
+}
+
+/* Food image */
+.cooking-time-modal .cooking-food-preview img {
+  width: 116px !important;
+  height: 116px !important;
+
+  flex: 0 0 116px !important;
+
+  object-fit: cover !important;
+
+  border-radius: 11px !important;
+  border: 1px solid #e2e8f0 !important;
+
+  box-shadow:
+    0 5px 15px rgba(15, 23, 42, 0.10) !important;
+}
+
+/* Food name */
+.cooking-time-modal .cooking-food-preview strong {
+  display: block !important;
+
+  margin-bottom: 5px !important;
+
+  color: #172033 !important;
+
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  line-height: 1.45 !important;
+}
+
+/* Customer */
+.cooking-time-modal .cooking-food-preview span {
+  color: #64748b !important;
+
+  font-size: 11px !important;
+}
+
+/* Preparation label */
+.cooking-time-modal .cooking-time-label {
+  display: block !important;
+
+  margin: 22px 0 8px !important;
+
+  color: #334155 !important;
+
+  font-size: 12px !important;
+  font-weight: 700 !important;
+}
+
+/* Input */
+.cooking-time-modal .cooking-time-input-wrap input {
+  height: 46px !important;
+
+  border: 1px solid #dfe5ec !important;
+  border-radius: 11px !important;
+
+  background: #ffffff !important;
+  color: #172033 !important;
+
+  font-size: 13px !important;
+  font-weight: 600 !important;
+
+  transition: all .2s ease !important;
+}
+
+.cooking-time-modal .cooking-time-input-wrap input:hover {
+  border-color: #cbd5e1 !important;
+}
+
+.cooking-time-modal .cooking-time-input-wrap input:focus {
+  border-color: #ff5a36 !important;
+
+  box-shadow:
+    0 0 0 4px rgba(255, 90, 54, .10) !important;
+}
+
+/* Minutes text */
+.cooking-time-modal .cooking-time-input-wrap span {
+  color: #94a3b8 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+
+/* Premium Start Cooking button */
+.cooking-time-modal #startCookingConfirm {
+  height: 48px !important;
+
+  margin-top: 20px !important;
+
+  border: 0 !important;
+  border-radius: 11px !important;
+
+  background: linear-gradient(
+    135deg,
+    #ff6543,
+    #ff4f2f
+  ) !important;
+
+  color: #ffffff !important;
+
+  font-size: 13px !important;
+  font-weight: 800 !important;
+
+  box-shadow:
+    0 8px 20px rgba(255, 90, 54, .22) !important;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    filter .2s ease !important;
+}
+
+.cooking-time-modal #startCookingConfirm:hover {
+  background: linear-gradient(
+    135deg,
+    #ff5a36,
+    #ed4528
+  ) !important;
+
+  transform: translateY(-2px) !important;
+
+  box-shadow:
+    0 12px 25px rgba(255, 90, 54, .28) !important;
+
+  filter: brightness(1.02) !important;
+}
+
+.cooking-time-modal #startCookingConfirm:active {
+  transform: translateY(0) !important;
+}
+
+/* Button icon */
+.cooking-time-modal #startCookingConfirm i {
+  color: #ffffff !important;
+  font-size: 13px !important;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .cooking-time-modal {
+    padding: 22px !important;
+    border-radius: 18px !important;
+  }
+
+  .cooking-time-modal h2 {
+    font-size: 21px !important;
+  }
+
+  .cooking-time-modal .cooking-food-preview img {
+    width: 90px !important;
+    height: 90px !important;
+    flex-basis: 90px !important;
+  }
+
+}
+
+
+/* =========================================================
+   MARK AS PREPARED ACTION
+========================================================= */
+
+.order-action-buttons .order-prepared-btn {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  width: 34px !important;
+  height: 34px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+
+  border: 1px solid #cdebdc !important;
+  border-radius: 10px !important;
+
+  background: #f0faf4 !important;
+  color: #16a05d !important;
+
+  cursor: pointer !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease !important;
+}
+
+.order-action-buttons .order-prepared-btn i {
+  display: inline-block !important;
+
+  color: #16a05d !important;
+  font-size: 13px !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.order-action-buttons .order-prepared-btn:hover {
+  background: #16a05d !important;
+  border-color: #16a05d !important;
+  color: #ffffff !important;
+
+  transform: translateY(-1px) !important;
+
+  box-shadow: 0 7px 16px rgba(22, 160, 93, .18) !important;
+}
+
+.order-action-buttons .order-prepared-btn:hover i {
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   PREPARED STATUS
+========================================================= */
+
+.orders-table .status-prepared {
+  color: #16a05d !important;
+  background: #f0faf4 !important;
+  border-color: #cdebdc !important;
+}
+
+.orders-table .status-prepared i {
+  color: #16a05d !important;
+}
+
+/* =========================================================
+   DELIVERED ACTION BUTTON — PREMIUM
+========================================================= */
+
+.order-action-buttons .order-delivered-btn {
+  width: 40px !important;
+  height: 40px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+
+  border: 1px solid #cdebdc !important;
+  border-radius: 11px !important;
+
+  background: #f0faf4 !important;
+  color: #16a05d !important;
+
+  font-size: 14px !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  cursor: pointer !important;
+
+  transition:
+    all .2s ease !important;
+}
+
+.order-action-buttons .order-delivered-btn i {
+  color: #16a05d !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.order-action-buttons .order-delivered-btn:hover {
+  background: #16a05d !important;
+  border-color: #16a05d !important;
+  color: #ffffff !important;
+
+  transform: translateY(-2px) !important;
+
+  box-shadow:
+    0 8px 18px rgba(22, 160, 93, .20) !important;
+}
+
+.order-action-buttons .order-delivered-btn:hover i {
+  color: #ffffff !important;
+}
+
+/* =========================================================
+   DELIVERED ACTION — MATCH OTHER BUTTONS
+========================================================= */
+
+.order-action-buttons .order-delivered-btn {
+  width: 34px !important;
+  height: 34px !important;
+
+  min-width: 34px !important;
+  min-height: 34px !important;
+
+  padding: 0 !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  border: 1px solid #cdebdc !important;
+  border-radius: 10px !important;
+
+  background: #f0faf4 !important;
+  color: #16a05d !important;
+
+  font-size: 13px !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  cursor: pointer !important;
+
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease !important;
+}
+
+.order-action-buttons .order-delivered-btn i {
+  display: inline-block !important;
+
+  color: #16a05d !important;
+  font-size: 13px !important;
+
+  line-height: 1 !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.order-action-buttons .order-delivered-btn:hover {
+  background: #16a05d !important;
+  border-color: #16a05d !important;
+  color: #ffffff !important;
+
+  transform: translateY(-1px) !important;
+
+  box-shadow:
+    0 6px 14px rgba(22, 160, 93, .18) !important;
+}
+
+.order-action-buttons .order-delivered-btn:hover i {
+  color: #ffffff !important;
+}
+

@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TastyLoop Admin Dashboard</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Common Admin CSS -->
+  <link rel="stylesheet" href="admin.css">
+
+
+</head>
+
+<body>
+
+  <!-- =========================================
+       ADMIN APP
+  ========================================== -->
+
+  <div class="admin-app">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="admin-sidebar" id="adminSidebar">
+
+      <!-- LOGO -->
+      <div class="admin-logo">
+        <div class="admin-logo-icon">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+
+        <div class="admin-logo-text">
+          <strong>Tasty<span>Loop</span></strong>
+          <small>ADMIN PANEL</small>
+        </div>
+      </div>
+
+<!-- MAIN MENU -->
+<div class="admin-menu-title">
+  MAIN MENU
+</div>
+
+<nav class="admin-navigation">
+
+  <a href="admin.html" class="admin-nav-item active">
+    <i class="fa-solid fa-chart-line"></i>
+    <span>Dashboard</span>
+  </a>
+
+  <a href="products.html" class="admin-nav-item">
+    <i class="fa-solid fa-box-open"></i>
+    <span>Products</span>
+    <b>24</b>
+  </a>
+
+  <a href="orders.html" class="admin-nav-item">
+    <i class="fa-solid fa-receipt"></i>
+    <span>Orders</span>
+    <b>12</b>
+  </a>
+
+  <a href="customers.html" class="admin-nav-item">
+    <i class="fa-solid fa-users"></i>
+    <span>Customers</span>
+  </a>
+
+  <a href="offers.html" class="admin-nav-item">
+    <i class="fa-solid fa-tag"></i>
+    <span>Offers &amp; Coupons</span>
+  </a>
+
+</nav>
+
+
+<!-- MANAGEMENT -->
+<div class="admin-menu-title">
+  MANAGEMENT
+</div>
+
+<nav class="admin-navigation">
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-store"></i>
+    <span>Restaurants</span>
+  </a>
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-layer-group"></i>
+    <span>Categories</span>
+  </a>
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-star"></i>
+    <span>Reviews</span>
+  </a>
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-gear"></i>
+    <span>Settings</span>
+  </a>
+
+</nav>  
+
+      <!-- CUSTOMER WEBSITE -->
+      <div class="admin-sidebar-bottom">
+        <a href="../TastyLoop/index.html" class="admin-nav-item">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Customer Website</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <button class="sidebar-toggle-simple" id="sidebarToggleSimple" type="button" aria-label="Toggle sidebar"
+      onclick="toggleSimpleSidebar()">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <!-- =========================================
+         MAIN AREA
+    ========================================== -->
+
+    <main class="admin-main">
+
+
+      <!-- =========================================
+     COMMON ADMIN HEADER
+========================================== -->
+
+      <header class="admin-header">
+
+  <div class="header-title">
+
+    <span>CONTROL CENTER</span>
+
+    <strong>Dashboard</strong>
+
+  </div>
+
+
+  <div class="header-actions">
+
+    <div class="admin-search">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <input
+        type="text"
+        id="productSearch"
+        placeholder="Search products..."
+      >
+
+      <kbd>⌘ K</kbd>
+
+    </div>
+
+
+    <button
+      class="header-icon-btn"
+      id="notificationBtn"
+      type="button"
+      aria-label="Notifications"
+    >
+
+      <i class="fa-regular fa-bell"></i>
+
+      <b class="notification-dot"></b>
+
+    </button>
+
+
+    <button
+      class="admin-profile-btn"
+      id="headerProfileBtn"
+      type="button"
+    >
+
+      <img
+        class="admin-avatar-img"
+        src="https://i.pravatar.cc/100?img=12"
+        alt="Admin"
+      >
+
+      <span class="admin-profile-text">
+
+        <strong>Admin</strong>
+
+        <small>Administrator</small>
+
+      </span>
+
+      <i class="fa-solid fa-chevron-down"></i>
+
+    </button>
+
+  </div>
+
+</header>
+
+
+
+      <!-- =========================================
+           DASHBOARD CONTENT
+      ========================================== -->
+
+      <section class="admin-content">
+
+
+        <!-- Welcome -->
+
+        <div class="dashboard-welcome">
+
+          <div>
+
+            <span>WELCOME BACK 👋</span>
+
+            <h2>Good evening, Admin</h2>
+
+            <p>
+              Here's what's happening with TastyLoop today.
+            </p>
+
+          </div>
+
+          <div class="dashboard-date">
+
+            <i class="fa-regular fa-calendar"></i>
+
+            <span id="dashboardDate">
+              Today
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             STAT CARDS
+        ====================================== -->
+
+        <div class="stats-grid">
+
+
+          <!-- Revenue -->
+
+          <div class="stat-card">
+
+            <div class="stat-card-top">
+
+              <div class="stat-icon revenue-icon">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+              </div>
+
+              <span class="stat-growth positive">
+                <i class="fa-solid fa-arrow-up"></i>
+                18.4%
+              </span>
+
+            </div>
+
+            <div class="stat-value">
+              ₹84,920
+            </div>
+
+            <div class="stat-label">
+              Total Revenue
+            </div>
+
+            <div class="stat-footer">
+              <span>vs last month</span>
+              <strong>₹71,760</strong>
+            </div>
+
+          </div>
+
+
+
+          <!-- Orders -->
+
+          <div class="stat-card">
+
+            <div class="stat-card-top">
+
+              <div class="stat-icon orders-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+
+              <span class="stat-growth positive">
+                <i class="fa-solid fa-arrow-up"></i>
+                12.8%
+              </span>
+
+            </div>
+
+            <div class="stat-value">
+              1,248
+            </div>
+
+            <div class="stat-label">
+              Total Orders
+            </div>
+
+            <div class="stat-footer">
+              <span>Today's orders</span>
+              <strong>86</strong>
+            </div>
+
+          </div>
+
+
+
+          <!-- Customers -->
+
+          <div class="stat-card">
+
+            <div class="stat-card-top">
+
+              <div class="stat-icon customers-icon">
+                <i class="fa-solid fa-users"></i>
+              </div>
+
+              <span class="stat-growth positive">
+                <i class="fa-solid fa-arrow-up"></i>
+                8.2%
+              </span>
+
+            </div>
+
+            <div class="stat-value">
+              8,426
+            </div>
+
+            <div class="stat-label">
+              Total Customers
+            </div>
+
+            <div class="stat-footer">
+              <span>New this month</span>
+              <strong>214</strong>
+            </div>
+
+          </div>
+
+
+
+          <!-- Products -->
+
+          <div class="stat-card">
+
+            <div class="stat-card-top">
+
+              <div class="stat-icon products-icon">
+                <i class="fa-solid fa-utensils"></i>
+              </div>
+
+              <span class="stat-status">
+                Active
+              </span>
+
+            </div>
+
+            <div class="stat-value" id="dashboardProductCount">
+              24
+            </div>
+
+            <div class="stat-label">
+              Active Products
+            </div>
+
+            <div class="stat-footer">
+              <span>Food catalog</span>
+
+              <a href="products.html">
+                Manage
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             QUICK ACTIONS
+        ====================================== -->
+
+        <section class="quick-actions-section">
+
+          <div class="section-heading">
+
+            <div>
+
+              <span>QUICK ACTIONS</span>
+
+              <h2>Manage TastyLoop</h2>
+
+            </div>
+
+          </div>
+
+
+          <div class="quick-actions-grid">
+
+
+            <!-- Add Product -->
+
+            <button class="quick-action-card" id="quickAddProduct">
+
+              <div class="quick-action-icon orange">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+
+              <div>
+                <strong>Add Product</strong>
+                <span>Add a new food item</span>
+              </div>
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+
+
+            <!-- Create Offer -->
+
+            <a href="offers.html" class="quick-action-card">
+
+              <div class="quick-action-icon purple">
+                <i class="fa-solid fa-tag"></i>
+              </div>
+
+              <div>
+                <strong>Create Offer</strong>
+                <span>Launch a new promotion</span>
+              </div>
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+
+            <!-- View Orders -->
+
+            <a href="orders.html" class="quick-action-card">
+
+              <div class="quick-action-icon blue">
+                <i class="fa-solid fa-receipt"></i>
+              </div>
+
+              <div>
+                <strong>View Orders</strong>
+                <span>Manage customer orders</span>
+              </div>
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+
+            <!-- Settings -->
+
+            <a href="settings.html" class="quick-action-card">
+
+              <div class="quick-action-icon green">
+                <i class="fa-solid fa-gear"></i>
+              </div>
+
+              <div>
+                <strong>Website Settings</strong>
+                <span>Configure TastyLoop</span>
+              </div>
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MAIN DASHBOARD GRID
+        ====================================== -->
+
+        <div class="dashboard-grid">
+
+
+          <!-- Revenue Card -->
+
+          <div class="dashboard-card revenue-card">
+
+            <div class="card-header">
+
+              <div>
+
+                <span>REVENUE OVERVIEW</span>
+
+                <h3>Sales Performance</h3>
+
+              </div>
+
+              <select id="revenuePeriod">
+
+                <option value="7">
+                  Last 7 days
+                </option>
+
+                <option value="30">
+                  Last 30 days
+                </option>
+
+                <option value="90">
+                  Last 3 months
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="chart-summary">
+
+              <div>
+
+                <strong>₹84,920</strong>
+
+                <span class="chart-positive">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  18.4%
+                </span>
+
+              </div>
+
+              <small>
+                Compared with previous period
+              </small>
+
+            </div>
+
+
+            <!-- Chart -->
+
+            <div class="revenue-chart">
+
+              <div class="chart-y-axis">
+
+                <span>₹30k</span>
+                <span>₹20k</span>
+                <span>₹10k</span>
+                <span>₹0</span>
+
+              </div>
+
+
+              <div class="chart-area">
+
+                <div class="chart-grid-line"></div>
+                <div class="chart-grid-line"></div>
+                <div class="chart-grid-line"></div>
+                <div class="chart-grid-line"></div>
+
+
+                <svg class="sales-svg" viewBox="0 0 700 260" preserveAspectRatio="none">
+
+                  <defs>
+
+                    <linearGradient id="salesGradient" x1="0" x2="0" y1="0" y2="1">
+
+                      <stop offset="0%" stop-opacity="0.25" />
+
+                      <stop offset="100%" stop-opacity="0" />
+
+                    </linearGradient>
+
+                  </defs>
+
+
+                  <path class="sales-fill" d="M0 220
+                       C70 205, 90 165, 140 180
+                       S220 125, 280 145
+                       S350 105, 410 125
+                       S490 65, 550 95
+                       S630 45, 700 70
+                       L700 260
+                       L0 260 Z"></path>
+
+
+                  <path class="sales-line" d="M0 220
+                       C70 205, 90 165, 140 180
+                       S220 125, 280 145
+                       S350 105, 410 125
+                       S490 65, 550 95
+                       S630 45, 700 70"></path>
+
+                </svg>
+
+
+                <div class="chart-tooltip">
+
+                  <strong>₹18,420</strong>
+
+                  <span>Sunday</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="chart-days">
+
+              <span>Mon</span>
+              <span>Tue</span>
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+              <span>Sun</span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Order Status -->
+
+          <div class="dashboard-card order-status-card">
+
+            <div class="card-header">
+
+              <div>
+
+                <span>ORDER STATUS</span>
+
+                <h3>Today's Orders</h3>
+
+              </div>
+
+              <button class="card-menu">
+                <i class="fa-solid fa-ellipsis"></i>
+              </button>
+
+            </div>
+
+
+            <div class="order-status-content">
+
+
+              <div class="order-donut-wrap">
+
+                <div class="donut-chart">
+
+                  <div class="donut-center">
+
+                    <strong>86</strong>
+
+                    <span>Orders</span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="order-legend">
+
+
+                <div>
+
+                  <span class="legend-dot pending"></span>
+
+                  <span>Pending</span>
+
+                  <strong>12</strong>
+
+                </div>
+
+
+                <div>
+
+                  <span class="legend-dot preparing"></span>
+
+                  <span>Preparing</span>
+
+                  <strong>24</strong>
+
+                </div>
+
+
+                <div>
+
+                  <span class="legend-dot delivery"></span>
+
+                  <span>Out for delivery</span>
+
+                  <strong>18</strong>
+
+                </div>
+
+
+                <div>
+
+                  <span class="legend-dot delivered"></span>
+
+                  <span>Delivered</span>
+
+                  <strong>32</strong>
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             RECENT ORDERS
+        ====================================== -->
+
+        <section class="dashboard-card recent-orders-card">
+
+          <div class="card-header">
+
+            <div>
+
+              <span>ORDERS</span>
+
+              <h3>Recent Orders</h3>
+
+            </div>
+
+            <a href="orders.html">
+              View all
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+
+          <div class="table-wrapper">
+
+            <table class="orders-table">
+
+              <thead>
+
+                <tr>
+
+                  <th>ORDER ID</th>
+                  <th>CUSTOMER</th>
+                  <th>ITEM</th>
+                  <th>AMOUNT</th>
+                  <th>STATUS</th>
+                  <th>TIME</th>
+                  <th></th>
+
+                </tr>
+
+              </thead>
+
+
+              <tbody id="recentOrdersTable">
+
+
+                <tr>
+
+                  <td>
+                    <strong class="order-id">
+                      #TL48291
+                    </strong>
+                  </td>
+
+                  <td>
+
+                    <div class="customer-cell">
+
+                      <img src="https://i.pravatar.cc/50?img=11" alt="Rahul">
+
+                      <span>Rahul Sharma</span>
+
+                    </div>
+
+                  </td>
+
+                  <td>
+                    Classic Cheese Burger
+                  </td>
+
+                  <td>
+                    <strong>₹699</strong>
+                  </td>
+
+                  <td>
+
+                    <span class="status-badge preparing">
+                      Preparing
+                    </span>
+
+                  </td>
+
+                  <td>
+                    5 min ago
+                  </td>
+
+                  <td>
+
+                    <button class="table-action">
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                  </td>
+
+                </tr>
+
+
+
+                <tr>
+
+                  <td>
+                    <strong class="order-id">
+                      #TL48290
+                    </strong>
+                  </td>
+
+                  <td>
+
+                    <div class="customer-cell">
+
+                      <img src="https://i.pravatar.cc/50?img=32" alt="Priya">
+
+                      <span>Priya Patel</span>
+
+                    </div>
+
+                  </td>
+
+                  <td>
+                    Farmhouse Pizza
+                  </td>
+
+                  <td>
+                    <strong>₹549</strong>
+                  </td>
+
+                  <td>
+
+                    <span class="status-badge delivery">
+                      Out for delivery
+                    </span>
+
+                  </td>
+
+                  <td>
+                    12 min ago
+                  </td>
+
+                  <td>
+
+                    <button class="table-action">
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                  </td>
+
+                </tr>
+
+
+
+                <tr>
+
+                  <td>
+                    <strong class="order-id">
+                      #TL48289
+                    </strong>
+                  </td>
+
+                  <td>
+
+                    <div class="customer-cell">
+
+                      <img src="https://i.pravatar.cc/50?img=44" alt="Amit">
+
+                      <span>Amit Shah</span>
+
+                    </div>
+
+                  </td>
+
+                  <td>
+                    Chicken Biryani
+                  </td>
+
+                  <td>
+                    <strong>₹429</strong>
+                  </td>
+
+                  <td>
+
+                    <span class="status-badge delivered">
+                      Delivered
+                    </span>
+
+                  </td>
+
+                  <td>
+                    28 min ago
+                  </td>
+
+                  <td>
+
+                    <button class="table-action">
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                  </td>
+
+                </tr>
+
+
+
+                <tr>
+
+                  <td>
+                    <strong class="order-id">
+                      #TL48288
+                    </strong>
+                  </td>
+
+                  <td>
+
+                    <div class="customer-cell">
+
+                      <img src="https://i.pravatar.cc/50?img=18" alt="Neha">
+
+                      <span>Neha Mehta</span>
+
+                    </div>
+
+                  </td>
+
+                  <td>
+                    Protein Power Bowl
+                  </td>
+
+                  <td>
+                    <strong>₹389</strong>
+                  </td>
+
+                  <td>
+
+                    <span class="status-badge pending">
+                      Pending
+                    </span>
+
+                  </td>
+
+                  <td>
+                    35 min ago
+                  </td>
+
+                  <td>
+
+                    <button class="table-action">
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+
+                  </td>
+
+                </tr>
+
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             BOTTOM INFORMATION
+        ====================================== -->
+
+        <div class="bottom-dashboard-grid">
+
+
+          <!-- Top Products -->
+
+          <div class="dashboard-card">
+
+            <div class="card-header">
+
+              <div>
+
+                <span>BEST SELLERS</span>
+
+                <h3>Top Products</h3>
+
+              </div>
+
+              <a href="products.html">
+                Manage
+              </a>
+
+            </div>
+
+
+            <div class="top-products-list">
+
+
+              <div class="top-product">
+
+                <div class="product-rank">
+                  01
+                </div>
+
+                <div class="product-image">
+                  🍔
+                </div>
+
+                <div class="product-info">
+
+                  <strong>Classic Cheese Burger</strong>
+
+                  <span>124 orders</span>
+
+                </div>
+
+                <strong>₹30.8k</strong>
+
+              </div>
+
+
+
+              <div class="top-product">
+
+                <div class="product-rank">
+                  02
+                </div>
+
+                <div class="product-image">
+                  🍕
+                </div>
+
+                <div class="product-info">
+
+                  <strong>Farmhouse Pizza</strong>
+
+                  <span>98 orders</span>
+
+                </div>
+
+                <strong>₹27.4k</strong>
+
+              </div>
+
+
+
+              <div class="top-product">
+
+                <div class="product-rank">
+                  03
+                </div>
+
+                <div class="product-image">
+                  🍛
+                </div>
+
+                <div class="product-info">
+
+                  <strong>Chicken Biryani</strong>
+
+                  <span>86 orders</span>
+
+                </div>
+
+                <strong>₹24.1k</strong>
+
+              </div>
+
+
+
+              <div class="top-product">
+
+                <div class="product-rank">
+                  04
+                </div>
+
+                <div class="product-image">
+                  🥗
+                </div>
+
+                <div class="product-info">
+
+                  <strong>Protein Power Bowl</strong>
+
+                  <span>72 orders</span>
+
+                </div>
+
+                <strong>₹19.8k</strong>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Activity -->
+
+          <div class="dashboard-card">
+
+            <div class="card-header">
+
+              <div>
+
+                <span>ACTIVITY</span>
+
+                <h3>Recent Activity</h3>
+
+              </div>
+
+            </div>
+
+
+            <div class="activity-list">
+
+
+              <div class="activity-item">
+
+                <div class="activity-icon order">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+                <div>
+
+                  <strong>New order received</strong>
+
+                  <span>
+                    #TL48291 · ₹699
+                  </span>
+
+                </div>
+
+                <small>
+                  5m
+                </small>
+
+              </div>
+
+
+
+              <div class="activity-item">
+
+                <div class="activity-icon customer">
+                  <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <div>
+
+                  <strong>New customer joined</strong>
+
+                  <span>
+                    Arjun Kapoor
+                  </span>
+
+                </div>
+
+                <small>
+                  18m
+                </small>
+
+              </div>
+
+
+
+              <div class="activity-item">
+
+                <div class="activity-icon product">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+
+                <div>
+
+                  <strong>Product added</strong>
+
+                  <span>
+                    Spicy Paneer Wrap
+                  </span>
+
+                </div>
+
+                <small>
+                  32m
+                </small>
+
+              </div>
+
+
+
+              <div class="activity-item">
+
+                <div class="activity-icon review">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div>
+
+                  <strong>New 5-star review</strong>
+
+                  <span>
+                    "Amazing food!"
+                  </span>
+
+                </div>
+
+                <small>
+                  1h
+                </small>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+
+  <!-- =========================================
+       COMMON ADMIN JAVASCRIPT
+  ========================================== -->
+
+  <script src="admin.js"></script>
+
+</body>
+
+</html>

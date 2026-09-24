@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TastyLoop — Premium Food Delivery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Mobile Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+      <div class="logo-icon">
+        <i class="fa-solid fa-utensils"></i>
+      </div>
+      <div>
+        <h2>Tasty<span>Loop</span></h2>
+        <small>FOOD DELIVERY</small>
+      </div>
+    </div>
+
+    <div class="menu-title">MENU</div>
+
+    <nav class="navigation">
+
+      <a href="#" class="nav-item active">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-compass"></i>
+        <span>Explore</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-store"></i>
+        <span>Restaurants</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-tag"></i>
+        <span>Offers</span>
+        <b class="nav-badge">4</b>
+      </a>
+
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Live Orders</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <i class="fa-regular fa-heart"></i>
+        <span>Favorites</span>
+      </a>
+
+    </nav>
+
+    <div class="premium-card">
+      <div class="premium-icon">
+        <i class="fa-solid fa-crown"></i>
+      </div>
+
+      <h3>TastyLoop+</h3>
+      <p>Get free delivery & exclusive offers.</p>
+
+      <button>
+        Explore Plus
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <div class="sidebar-profile">
+
+      <img src="https://i.pravatar.cc/100?img=12" alt="Profile">
+
+      <div class="profile-info">
+        <strong>Alex Morgan</strong>
+        <span>Premium Member</span>
+      </div>
+
+      <button class="profile-menu" id="profileMenuBtn">
+        <i class="fa-solid fa-ellipsis"></i>
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+      <button class="mobile-menu" id="mobileMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="location-box">
+        <div class="location-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+
+        <div>
+          <small>DELIVER TO</small>
+          <strong>Ahmedabad, India <i class="fa-solid fa-chevron-down"></i></strong>
+        </div>
+      </div>
+
+      <div class="top-actions">
+
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            id="restaurantSearch"
+            placeholder="Search food, restaurants..."
+          >
+          <span>⌘ K</span>
+        </div>
+
+        <button class="icon-btn">
+          <i class="fa-regular fa-bell"></i>
+          <b></b>
+        </button>
+
+        <button class="cart-top-btn" id="openCart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Cart</span>
+          <b id="cartCount">0</b>
+        </button>
+
+        <img
+          class="top-avatar" id="topProfileAvatar"
+          src="https://i.pravatar.cc/100?img=12"
+          alt="Profile"
+        >
+
+      </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          <i class="fa-solid fa-sparkles"></i>
+          THE TASTY WAY TO EAT
+        </div>
+
+        <h1>
+          Delicious food,
+          <br>
+          <span>delivered your way.</span>
+        </h1>
+
+        <p>
+          Discover amazing restaurants, crave-worthy dishes,
+          and exclusive deals — all in one place.
+        </p>
+
+        <div class="hero-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            id="heroSearch"
+            type="text"
+            placeholder="What are you craving today?"
+          >
+
+          <button id="heroSearchBtn">
+            Search
+          </button>
+        </div>
+
+        <div class="hero-features">
+
+          <div>
+            <i class="fa-solid fa-bolt"></i>
+            <span>Fast delivery</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>Safe & fresh</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-percent"></i>
+            <span>Best offers</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-visual">
+
+        <div class="hero-glow"></div>
+
+        <div class="hero-food">
+          <img
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85"
+            alt="Pizza"
+          >
+        </div>
+
+        <div class="discount-badge">
+          <strong>50%</strong>
+          <span>OFF</span>
+        </div>
+
+        <div class="floating-rating">
+          <i class="fa-solid fa-star"></i>
+          <div>
+            <strong>4.9</strong>
+            <span>2.4k reviews</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CUISINES ================= -->
+    <section class="section">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-label">EXPLORE</span>
+          <h2>What are you craving?</h2>
+        </div>
+
+        <button class="view-all">
+          View all
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="cuisine-list">
+
+        <button class="cuisine active" data-category="All">
+          <div>🍽️</div>
+          <span>All</span>
+        </button>
+
+        <button class="cuisine" data-category="Italian">
+          <div>🍝</div>
+          <span>Italian</span>
+        </button>
+
+        <button class="cuisine" data-category="Indian">
+          <div>🍛</div>
+          <span>Indian</span>
+        </button>
+
+        <button class="cuisine" data-category="Chinese">
+          <div>🥡</div>
+          <span>Chinese</span>
+        </button>
+
+        <button class="cuisine" data-category="Burgers">
+          <div>🍔</div>
+          <span>Burgers</span>
+        </button>
+
+        <button class="cuisine" data-category="Pizza">
+          <div>🍕</div>
+          <span>Pizza</span>
+        </button>
+
+        <button class="cuisine" data-category="Mexican">
+          <div>🌮</div>
+          <span>Mexican</span>
+        </button>
+
+        <button class="cuisine" data-category="Japanese">
+          <div>🍣</div>
+          <span>Japanese</span>
+        </button>
+
+        <button class="cuisine" data-category="Healthy">
+          <div>🥗</div>
+          <span>Healthy</span>
+        </button>
+
+        <button class="cuisine" data-category="Desserts">
+          <div>🍰</div>
+          <span>Desserts</span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= RESTAURANTS ================= -->
+    
+<!-- =====================================================
+     PHASE 4 — AI SMART RECOMMENDATIONS
+===================================================== -->
+<section class="section ai-recommendation-section" id="aiRecommendations">
+  <div class="section-heading ai-heading">
+    <div>
+      <span class="section-eyebrow">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        TASTYLOOP INTELLIGENCE
+      </span>
+      <h2>Picked specially for you</h2>
+      <p>Smart suggestions based on your taste, cart and what’s trending.</p>
+    </div>
+
+    <div class="ai-mode-switch" id="aiModeSwitch">
+      <button class="ai-mode active" data-mode="for-you">For You</button>
+      <button class="ai-mode" data-mode="budget">Budget</button>
+      <button class="ai-mode" data-mode="healthy">Healthy</button>
+      <button class="ai-mode" data-mode="premium">Premium</button>
+    </div>
+  </div>
+
+  <div class="ai-insight-card">
+    <div class="ai-insight-icon">
+      <i class="fa-solid fa-brain"></i>
+    </div>
+    <div>
+      <strong>AI taste match: 94%</strong>
+      <span>We think these dishes fit your current cravings.</span>
+    </div>
+    <div class="ai-insight-sparkles">
+      <i class="fa-solid fa-sparkles"></i>
+    </div>
+  </div>
+
+  <div class="ai-recommendation-grid" id="aiRecommendationGrid"></div>
+</section>
+
+<!-- AI recommendation quick-view -->
+<div class="ai-quickview-overlay" id="aiQuickviewOverlay" aria-hidden="true">
+  <div class="ai-quickview">
+    <button class="ai-quickview-close" id="aiQuickviewClose">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="ai-quickview-image-wrap">
+      <img id="aiQuickviewImage" src="" alt="">
+      <span id="aiQuickviewMatch">94% match</span>
+    </div>
+    <div class="ai-quickview-content">
+      <span class="section-eyebrow">AI RECOMMENDATION</span>
+      <h3 id="aiQuickviewName">Dish</h3>
+      <p id="aiQuickviewReason">Recommended because it matches your taste.</p>
+      <div class="ai-quickview-meta">
+        <strong id="aiQuickviewPrice">₹0</strong>
+        <span id="aiQuickviewRating">★ 4.8</span>
+      </div>
+      <button class="ai-quickview-add" id="aiQuickviewAdd">
+        <i class="fa-solid fa-bag-shopping"></i>
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- =====================================================
+     PHASE 5 — TASTYLOOP REWARDS
+===================================================== -->
+<section class="section rewards-section" id="rewards">
+  <div class="section-heading rewards-heading">
+    <div>
+      <span class="section-eyebrow"><i class="fa-solid fa-coins"></i> TASTYLOOP REWARDS</span>
+      <h2>Get rewarded for every craving</h2>
+      <p>Earn TastyCoins, keep your food streak alive and unlock exclusive perks.</p>
+    </div>
+    <button class="rewards-wallet-btn" id="openRewardsWallet">
+      <i class="fa-solid fa-wallet"></i> Rewards wallet
+    </button>
+  </div>
+
+  <div class="rewards-top-grid">
+    <div class="reward-balance-card">
+      <div class="reward-card-glow"></div>
+      <div class="reward-card-top">
+        <span><i class="fa-solid fa-circle-dollar-to-slot"></i> TastyCoins</span>
+        <span class="reward-live"><i class="fa-solid fa-sparkles"></i> LIVE</span>
+      </div>
+      <div class="coin-balance" id="coinBalance">1,280</div>
+      <div class="coin-value"><span id="coinValue">₹128</span> reward value</div>
+      <div class="coin-progress-row"><span id="levelName">Pro Foodie</span><span id="levelProgressText">740 XP</span></div>
+      <div class="level-progress"><span id="levelProgressFill"></span></div>
+      <div class="next-level">Next: <strong id="nextLevelName">Legend</strong> · <span id="xpNeeded">1,260 XP</span> to go</div>
+    </div>
+
+    <div class="streak-card">
+      <div class="streak-icon"><i class="fa-solid fa-fire"></i></div>
+      <div>
+        <span class="reward-mini-label">FOOD STREAK</span>
+        <strong><span id="streakCount">7</span> days</strong>
+        <p>Order today to keep your streak burning.</p>
+      </div>
+      <div class="streak-days" id="streakDays">
+        <span class="done">M</span><span class="done">T</span><span class="done">W</span><span class="done">T</span><span class="done">F</span><span class="done">S</span><span class="today">S</span>
+      </div>
+    </div>
+
+    <div class="daily-reward-card">
+      <div class="daily-icon"><i class="fa-solid fa-gift"></i></div>
+      <div class="daily-copy">
+        <span class="reward-mini-label">DAILY DROP</span>
+        <strong>Claim +75 coins</strong>
+        <p id="dailyRewardText">Your daily reward is ready.</p>
+      </div>
+      <button id="claimDailyReward">Claim</button>
+    </div>
+  </div>
+
+  <div class="rewards-bottom-grid">
+    <div class="achievements-card">
+      <div class="rewards-subheading"><div><span class="reward-mini-label">ACHIEVEMENTS</span><h3>Your food journey</h3></div><span class="achievement-count" id="achievementCount">4 / 8</span></div>
+      <div class="achievement-list">
+        <div class="achievement unlocked"><div class="achievement-icon"><i class="fa-solid fa-bolt"></i></div><div><strong>Quick Bite</strong><span>Placed your first order</span></div><i class="fa-solid fa-circle-check status"></i></div>
+        <div class="achievement unlocked"><div class="achievement-icon"><i class="fa-solid fa-fire"></i></div><div><strong>On a Roll</strong><span>7-day food streak</span></div><i class="fa-solid fa-circle-check status"></i></div>
+        <div class="achievement unlocked"><div class="achievement-icon"><i class="fa-solid fa-coins"></i></div><div><strong>Coin Collector</strong><span>Earned 1,000 TastyCoins</span></div><i class="fa-solid fa-circle-check status"></i></div>
+        <div class="achievement unlocked"><div class="achievement-icon"><i class="fa-solid fa-crown"></i></div><div><strong>Pro Foodie</strong><span>Reached 1,000 XP</span></div><i class="fa-solid fa-circle-check status"></i></div>
+      </div>
+    </div>
+
+    <div class="redeem-card">
+      <div class="rewards-subheading"><div><span class="reward-mini-label">REDEEM</span><h3>Spend your coins</h3></div><span class="redeem-balance"><i class="fa-solid fa-coins"></i> <span id="redeemBalance">1,280</span></span></div>
+      <div class="redeem-list">
+        <button class="redeem-item" data-cost="300" data-reward="Free delivery"><span class="redeem-icon"><i class="fa-solid fa-truck-fast"></i></span><span><strong>Free delivery</strong><small>300 coins</small></span><i class="fa-solid fa-chevron-right"></i></button>
+        <button class="redeem-item" data-cost="500" data-reward="₹50 off"><span class="redeem-icon"><i class="fa-solid fa-ticket"></i></span><span><strong>₹50 off</strong><small>500 coins</small></span><i class="fa-solid fa-chevron-right"></i></button>
+        <button class="redeem-item" data-cost="1200" data-reward="₹150 off"><span class="redeem-icon"><i class="fa-solid fa-gift"></i></span><span><strong>₹150 off</strong><small>1,200 coins</small></span><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rewards-overlay" id="rewardsOverlay" aria-hidden="true">
+  <div class="rewards-modal">
+    <button class="rewards-modal-close" id="closeRewardsWallet"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-coin"><i class="fa-solid fa-coins"></i></div>
+    <span class="reward-mini-label">TASTYLOOP WALLET</span>
+    <h3 id="walletCoinBalance">1,280 TastyCoins</h3>
+    <p>Use coins on your next order, or keep collecting to unlock bigger rewards.</p>
+    <div class="wallet-stats"><div><strong id="walletValue">₹128</strong><span>Current value</span></div><div><strong id="walletStreak">7 days</strong><span>Food streak</span></div><div><strong id="walletLevel">Pro Foodie</strong><span>Current level</span></div></div>
+    <button class="wallet-close-btn" id="walletDone">Done</button>
+  </div>
+</div>
+
+
+<!-- ================= PHASE 6 — PROFILE & ORDER HUB ================= -->
+<section class="section profile-hub-section" id="profileHub">
+  <div class="section-heading profile-hub-heading">
+    <div>
+      <span class="section-eyebrow"><i class="fa-solid fa-user-circle"></i> YOUR TASTYLOOP</span>
+      <h2>Everything you need, in one place.</h2>
+      <p>Orders, addresses, payments and your personal food preferences.</p>
+    </div>
+    <button class="profile-view-btn" id="openProfileHub"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open profile</button>
+  </div>
+
+  <div class="profile-hub-grid">
+    <div class="profile-identity-card">
+      <div class="profile-cover-glow"></div>
+      <div class="profile-main-row">
+        <div class="profile-avatar-large-wrap">
+          <img src="https://i.pravatar.cc/160?img=12" alt="Alex Morgan" id="profileHubAvatar">
+          <span class="profile-online"></span>
+        </div>
+        <div class="profile-main-copy">
+          <span class="profile-kicker">PREMIUM MEMBER</span>
+          <h3>Alex Morgan</h3>
+          <p><i class="fa-solid fa-location-dot"></i> Ahmedabad, Gujarat</p>
+        </div>
+        <button class="profile-edit-btn" id="editProfileBtn"><i class="fa-solid fa-pen"></i></button>
+      </div>
+      <div class="profile-stat-row">
+        <div><strong id="profileOrdersCount">12</strong><span>Orders</span></div>
+        <div><strong id="profileSavedCount">8</strong><span>Favorites</span></div>
+        <div><strong id="profileCoinsCount">1,280</strong><span>TastyCoins</span></div>
+      </div>
+    </div>
+
+    <div class="profile-quick-card">
+      <div class="profile-quick-head"><span>QUICK ACCESS</span><i class="fa-solid fa-grid-2"></i></div>
+      <div class="profile-quick-grid">
+        <button class="profile-quick-item" data-profile-tab="orders"><i class="fa-solid fa-receipt"></i><span>Order history</span><b>12</b></button>
+        <button class="profile-quick-item" data-profile-tab="addresses"><i class="fa-solid fa-location-dot"></i><span>Saved addresses</span><b>3</b></button>
+        <button class="profile-quick-item" data-profile-tab="payments"><i class="fa-solid fa-credit-card"></i><span>Payment methods</span><b>3</b></button>
+        <button class="profile-quick-item" data-profile-tab="rewards"><i class="fa-solid fa-coins"></i><span>Rewards wallet</span><b id="profileQuickCoins">1,280</b></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="recent-orders-card">
+    <div class="recent-orders-head">
+      <div><span class="reward-mini-label">RECENT ACTIVITY</span><h3>Your latest orders</h3></div>
+      <button id="viewAllOrders">View all <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+    <div class="recent-order-list" id="recentOrderList"></div>
+  </div>
+</section>
+
+<!-- ================= PHASE 6 PROFILE MODAL ================= -->
+<div class="profile-overlay" id="profileOverlay" aria-hidden="true">
+  <div class="profile-modal">
+    <button class="profile-modal-close" id="closeProfileHub"><i class="fa-solid fa-xmark"></i></button>
+    <div class="profile-modal-header">
+      <div class="profile-modal-avatar"><img src="https://i.pravatar.cc/140?img=12" alt="Alex Morgan"><span></span></div>
+      <div><span class="profile-kicker">YOUR ACCOUNT</span><h2>Alex Morgan</h2><p>Premium member · TastyLoop since 2025</p></div>
+      <div class="profile-level-chip"><i class="fa-solid fa-crown"></i> <span id="profileModalLevel">Pro Foodie</span></div>
+    </div>
+
+    <div class="profile-tabs" id="profileTabs">
+      <button class="profile-tab active" data-tab="orders"><i class="fa-solid fa-receipt"></i> Orders</button>
+      <button class="profile-tab" data-tab="addresses"><i class="fa-solid fa-location-dot"></i> Addresses</button>
+      <button class="profile-tab" data-tab="payments"><i class="fa-solid fa-credit-card"></i> Payments</button>
+      <button class="profile-tab" data-tab="rewards"><i class="fa-solid fa-coins"></i> Rewards</button>
+    </div>
+
+    <div class="profile-panel active" data-panel="orders">
+      <div class="panel-title-row"><div><span>ORDER HISTORY</span><h3>Reorder your favorites</h3></div><span class="panel-count">12 orders</span></div>
+      <div class="order-history-list" id="orderHistoryList"></div>
+    </div>
+
+    <div class="profile-panel" data-panel="addresses">
+      <div class="panel-title-row"><div><span>SAVED ADDRESSES</span><h3>Where should we deliver?</h3></div><button class="add-small-btn" id="addAddressBtn"><i class="fa-solid fa-plus"></i> Add new</button></div>
+      <div class="address-list" id="addressList"></div>
+    </div>
+
+    <div class="profile-panel" data-panel="payments">
+      <div class="panel-title-row"><div><span>PAYMENT METHODS</span><h3>Fast & secure checkout</h3></div><button class="add-small-btn" id="addPaymentBtn"><i class="fa-solid fa-plus"></i> Add method</button></div>
+      <div class="payment-method-list" id="paymentMethodList"></div>
+    </div>
+
+    <div class="profile-panel" data-panel="rewards">
+      <div class="profile-rewards-banner"><div><span>TASTYCOINS BALANCE</span><strong id="profileRewardsCoins">1,280</strong><small>≈ ₹128 value</small></div><div class="profile-rewards-icon"><i class="fa-solid fa-coins"></i></div></div>
+      <div class="profile-reward-stats"><div><strong id="profileRewardStreak">7</strong><span>Day streak</span></div><div><strong id="profileRewardXP">1,740</strong><span>XP earned</span></div><div><strong id="profileRewardLevel">Pro Foodie</strong><span>Current level</span></div></div>
+      <button class="profile-rewards-action" id="goToRewards"><i class="fa-solid fa-arrow-right"></i> Open full rewards wallet</button>
+    </div>
+  </div>
+</div>
+
+<section class="section restaurants-section">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-label">TOP PICKS</span>
+          <h2>Popular near you</h2>
+        </div>
+
+        <div class="restaurant-controls">
+          <button id="prevRestaurant">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+
+          <button id="nextRestaurant">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+
+
+      <div class="restaurant-grid" id="restaurantGrid">
+
+        <!-- CARD 1 -->
+        <article
+          class="restaurant-card"
+          data-category="Burgers"
+          data-name="McDonald's"
+        >
+
+          <div class="restaurant-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
+              alt="Burger"
+            >
+
+            <span class="offer-pill">20% OFF</span>
+
+            <button class="favorite-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+          </div>
+
+          <div class="restaurant-content">
+
+            <div class="restaurant-title">
+              <h3>McDonald's</h3>
+              <span class="verified">
+                <i class="fa-solid fa-check"></i>
+              </span>
+            </div>
+
+            <p>Burgers · Fast Food · American</p>
+
+            <div class="restaurant-meta">
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.8
+              </span>
+
+              <span>25–35 min</span>
+              <span>₹₹</span>
+            </div>
+
+            <div class="food-row">
+
+              <div>
+                <strong>Classic Cheese Burger</strong>
+                <span>₹249</span>
+              </div>
+
+              <button
+                class="add-btn"
+                data-name="Classic Cheese Burger"
+                data-price="249"
+                data-image="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=300&q=80"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 2 -->
+        <article
+          class="restaurant-card"
+          data-category="Pizza"
+          data-name="Domino's Pizza"
+        >
+
+          <div class="restaurant-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80"
+              alt="Pizza"
+            >
+
+            <span class="offer-pill">30% OFF</span>
+
+            <button class="favorite-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+          </div>
+
+          <div class="restaurant-content">
+
+            <div class="restaurant-title">
+              <h3>Domino's Pizza</h3>
+              <span class="verified">
+                <i class="fa-solid fa-check"></i>
+              </span>
+            </div>
+
+            <p>Pizza · Italian · Fast Food</p>
+
+            <div class="restaurant-meta">
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.7
+              </span>
+
+              <span>20–30 min</span>
+              <span>₹₹</span>
+            </div>
+
+            <div class="food-row">
+
+              <div>
+                <strong>Farmhouse Pizza</strong>
+                <span>₹399</span>
+              </div>
+
+              <button
+                class="add-btn"
+                data-name="Farmhouse Pizza"
+                data-price="399"
+                data-image="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=300&q=80"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 3 -->
+        <article
+          class="restaurant-card"
+          data-category="Indian"
+          data-name="Biryani Blues"
+        >
+
+          <div class="restaurant-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=80"
+              alt="Biryani"
+            >
+
+            <span class="offer-pill">15% OFF</span>
+
+            <button class="favorite-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+          </div>
+
+          <div class="restaurant-content">
+
+            <div class="restaurant-title">
+              <h3>Biryani Blues</h3>
+              <span class="verified">
+                <i class="fa-solid fa-check"></i>
+              </span>
+            </div>
+
+            <p>Indian · Biryani · Mughlai</p>
+
+            <div class="restaurant-meta">
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.9
+              </span>
+
+              <span>30–40 min</span>
+              <span>₹₹</span>
+            </div>
+
+            <div class="food-row">
+
+              <div>
+                <strong>Chicken Biryani</strong>
+                <span>₹329</span>
+              </div>
+
+              <button
+                class="add-btn"
+                data-name="Chicken Biryani"
+                data-price="329"
+                data-image="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=300&q=80"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 4 -->
+        <article
+          class="restaurant-card"
+          data-category="Healthy"
+          data-name="Urban Kitchen"
+        >
+
+          <div class="restaurant-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
+              alt="Healthy food"
+            >
+
+            <span class="offer-pill">10% OFF</span>
+
+            <button class="favorite-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+          </div>
+
+          <div class="restaurant-content">
+
+            <div class="restaurant-title">
+              <h3>Urban Kitchen</h3>
+              <span class="verified">
+                <i class="fa-solid fa-check"></i>
+              </span>
+            </div>
+
+            <p>Healthy · Bowls · Salads</p>
+
+            <div class="restaurant-meta">
+              <span class="rating">
+                <i class="fa-solid fa-star"></i>
+                4.6
+              </span>
+
+              <span>25–35 min</span>
+              <span>₹₹₹</span>
+            </div>
+
+            <div class="food-row">
+
+              <div>
+                <strong>Protein Power Bowl</strong>
+                <span>₹349</span>
+              </div>
+
+              <button
+                class="add-btn"
+                data-name="Protein Power Bowl"
+                data-price="349"
+                data-image="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=300&q=80"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Add
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= OFFER ================= -->
+    <section class="offer-banner">
+
+      <div class="offer-text">
+
+        <span>LIMITED TIME</span>
+
+        <h2>
+          Cravings don't wait.
+          <br>
+          Neither should you.
+        </h2>
+
+        <p>
+          Get up to 50% off on your first 3 orders.
+        </p>
+
+        <button id="claimOffer">
+          Claim offer
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </div>
+
+      <div class="offer-visual">
+        <div class="offer-circle">50%</div>
+        <span>OFF</span>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= RIGHT CART DRAWER ================= -->
+  <aside class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-header">
+
+      <div>
+        <span class="section-label">YOUR ORDER</span>
+        <h2>Your cart <span id="cartItemCount">(0)</span></h2>
+      </div>
+
+      <button id="closeCart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+
+    <!-- Free delivery -->
+    <div class="delivery-progress">
+
+      <div class="delivery-top">
+        <span>
+          <i class="fa-solid fa-truck-fast"></i>
+          <strong id="deliveryMessage">
+            Add ₹499 more for free delivery
+          </strong>
+        </span>
+
+        <span id="deliveryPercent">0%</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+    </div>
+
+
+    <!-- Cart Items -->
+    <div class="cart-items" id="cartItems">
+
+      <div class="empty-cart">
+
+        <div class="empty-cart-icon">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+
+        <h3>Your cart is empty</h3>
+
+        <p>Add something delicious<br>to get started.</p>
+
+        <button id="startShopping">
+          Start shopping
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Recommendations -->
+    <div class="recommendations" id="recommendations">
+
+      <div class="mini-heading">
+        <span>YOU MAY ALSO LIKE</span>
+      </div>
+
+      <div class="recommendation-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=200&q=80"
+          alt="Dessert"
+        >
+
+        <div>
+          <strong>Chocolate Cake</strong>
+          <span>₹189</span>
+        </div>
+
+        <button
+          class="recommend-add"
+          data-name="Chocolate Cake"
+          data-price="189"
+          data-image="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=200&q=80"
+        >
+          +
+        </button>
+
+      </div>
+
+      <div class="recommendation-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=200&q=80"
+          alt="Shake"
+        >
+
+        <div>
+          <strong>Chocolate Shake</strong>
+          <span>₹159</span>
+        </div>
+
+        <button
+          class="recommend-add"
+          data-name="Chocolate Shake"
+          data-price="159"
+          data-image="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=200&q=80"
+        >
+          +
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Coupon -->
+    <div class="coupon-section">
+
+      <div class="coupon-input">
+
+        <i class="fa-solid fa-ticket"></i>
+
+        <input
+          id="couponInput"
+          type="text"
+          placeholder="Have a coupon?"
+        >
+
+        <button id="applyCoupon">
+          Apply
+        </button>
+
+      </div>
+
+      <small id="couponMessage"></small>
+
+    </div>
+
+
+    <!-- Summary -->
+    <div class="cart-summary">
+
+      <div>
+        <span>Subtotal</span>
+        <strong id="subtotal">₹0</strong>
+      </div>
+
+      <div>
+        <span>Delivery fee</span>
+        <strong id="deliveryFee">₹0</strong>
+      </div>
+
+      <div>
+        <span>Taxes & charges</span>
+        <strong id="tax">₹0</strong>
+      </div>
+
+      <div class="discount-row" id="discountRow">
+        <span>Discount</span>
+        <strong id="discount">-₹0</strong>
+      </div>
+
+      <div class="total-row">
+        <span>Total</span>
+        <strong id="total">₹0</strong>
+      </div>
+
+    </div>
+
+
+    <button class="checkout-btn" id="checkoutBtn">
+      <span>Proceed to checkout</span>
+      <strong id="checkoutTotal">₹0</strong>
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+    <p class="secure-payment">
+      <i class="fa-solid fa-lock"></i>
+      Secure checkout · 100% safe payments
+    </p>
+
+  </aside>
+
+
+  <!-- ================= CHECKOUT MODAL ================= -->
+  <div class="checkout-overlay" id="checkoutOverlay">
+
+    <div class="checkout-modal">
+
+      <button class="checkout-close" id="closeCheckout">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="checkout-title">
+        <span class="section-label">TASTYLOOP CHECKOUT</span>
+        <h2>Complete your order</h2>
+        <p>Almost there. Just a few details.</p>
+      </div>
+
+
+      <div class="checkout-layout">
+
+        <!-- LEFT -->
+        <div class="checkout-left">
+
+          <div class="checkout-card">
+
+            <div class="checkout-card-heading">
+              <h3>
+                <span>01</span>
+                Delivery address
+              </h3>
+
+              <button>Edit</button>
+            </div>
+
+            <div class="address-option active">
+
+              <div class="address-radio">
+                <i class="fa-solid fa-check"></i>
+              </div>
+
+              <div>
+                <strong>Home</strong>
+                <p>Ahmedabad, Gujarat</p>
+              </div>
+
+              <i class="fa-solid fa-house"></i>
+
+            </div>
+
+          </div>
+
+
+          <div class="checkout-card">
+
+            <div class="checkout-card-heading">
+              <h3>
+                <span>02</span>
+                Payment method
+              </h3>
+            </div>
+
+            <div class="payment-options">
+
+              <button class="payment-option active">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span>UPI</span>
+                <i class="fa-solid fa-circle-check"></i>
+              </button>
+
+              <button class="payment-option">
+                <i class="fa-regular fa-credit-card"></i>
+                <span>Card</span>
+                <i class="fa-regular fa-circle"></i>
+              </button>
+
+              <button class="payment-option">
+                <i class="fa-solid fa-wallet"></i>
+                <span>Wallet</span>
+                <i class="fa-regular fa-circle"></i>
+              </button>
+
+              <button class="payment-option">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <span>Cash</span>
+                <i class="fa-regular fa-circle"></i>
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="checkout-card">
+
+            <div class="checkout-card-heading">
+              <h3>
+                <span>03</span>
+                Delivery instructions
+              </h3>
+            </div>
+
+            <textarea
+              placeholder="Anything we should know? e.g. Ring the bell..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+        <div class="checkout-right">
+
+          <div class="checkout-summary-card">
+
+            <h3>Order summary</h3>
+
+            <div id="checkoutItems"></div>
+
+            <div class="checkout-line">
+              <span>Subtotal</span>
+              <strong id="checkoutSubtotal">₹0</strong>
+            </div>
+
+            <div class="checkout-line">
+              <span>Delivery</span>
+              <strong id="checkoutDelivery">₹0</strong>
+            </div>
+
+            <div class="checkout-line">
+              <span>Taxes</span>
+              <strong id="checkoutTax">₹0</strong>
+            </div>
+
+            <div class="checkout-final">
+              <span>Total</span>
+              <strong id="checkoutFinalTotal">₹0</strong>
+            </div>
+
+            <button id="placeOrder">
+              Place order
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= SUCCESS ================= -->
+  <div class="success-overlay" id="successOverlay">
+
+    <div class="success-card">
+
+      <div class="success-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <span>ORDER CONFIRMED</span>
+
+      <h2>Your food is on the way!</h2>
+
+      <p>
+        Order <strong>#TL<span id="orderNumber">48291</span></strong>
+        has been placed successfully.
+      </p>
+
+      <div class="success-info">
+
+        <div>
+          <i class="fa-solid fa-clock"></i>
+          <span>Arriving in<strong>25–35 min</strong></span>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Delivering to<strong>Home</strong></span>
+        </div>
+
+      </div>
+
+      <button id="trackOrder">
+        Track my order
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+
+      <button class="continue-btn" id="continueShopping">
+        Continue shopping
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ================= LIVE ORDER TRACKING / PHASE 3 ================= -->
+  <div class="tracking-overlay" id="trackingOverlay" aria-hidden="true">
+    <div class="tracking-modal">
+
+      <div class="tracking-header">
+        <div class="tracking-heading">
+          <button class="tracking-back" id="closeTracking" aria-label="Close tracking">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <div>
+            <span class="tracking-kicker"><span class="live-dot"></span> LIVE ORDER</span>
+            <h2>Track your order</h2>
+            <p>Order <strong>#TL<span id="trackingOrderNumber">48291</span></strong> · Updated just now</p>
+          </div>
+        </div>
+        <button class="tracking-close" id="trackingCloseIcon" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="tracking-map">
+        <div class="map-grid"></div>
+        <div class="map-road road-1"></div>
+        <div class="map-road road-2"></div>
+        <div class="map-road road-3"></div>
+        <div class="map-road road-4"></div>
+        <div class="map-block block-1"></div>
+        <div class="map-block block-2"></div>
+        <div class="map-block block-3"></div>
+        <div class="map-block block-4"></div>
+        <div class="map-block block-5"></div>
+
+        <svg class="tracking-route" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+          <path class="route-shadow" d="M150 110 C270 95, 300 230, 440 205 S600 145, 680 250 S820 380, 875 350" />
+          <path class="route-base" d="M150 110 C270 95, 300 230, 440 205 S600 145, 680 250 S820 380, 875 350" />
+          <path class="route-progress" id="routeProgress" d="M150 110 C270 95, 300 230, 440 205 S600 145, 680 250 S820 380, 875 350" />
+        </svg>
+
+        <div class="map-marker restaurant-marker">
+          <span class="marker-pulse"></span>
+          <div class="marker-icon"><i class="fa-solid fa-utensils"></i></div>
+          <div class="marker-label"><strong>Urban Kitchen</strong><span>Restaurant</span></div>
+        </div>
+
+        <div class="map-marker home-marker">
+          <span class="marker-pulse"></span>
+          <div class="marker-icon"><i class="fa-solid fa-house"></i></div>
+          <div class="marker-label"><strong>Your home</strong><span>Destination</span></div>
+        </div>
+
+        <div class="rider-marker" id="riderMarker">
+          <span class="rider-pulse"></span>
+          <div class="rider-bike"><i class="fa-solid fa-motorcycle"></i></div>
+          <span class="rider-tag">Rider</span>
+        </div>
+
+        <div class="map-eta-card">
+          <div class="eta-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div><span>ARRIVING IN</span><strong id="trackingEta">27:40</strong></div>
+          <small>min : sec</small>
+        </div>
+
+        <div class="map-live-chip"><span class="live-dot"></span> Rider is moving</div>
+
+        <div class="map-distance">
+          <i class="fa-solid fa-route"></i>
+          <span><strong id="distanceValue">2.4 km</strong> away</span>
+        </div>
+      </div>
+
+      <div class="tracking-content">
+        <div class="tracking-main">
+          <div class="tracking-status-row">
+            <div>
+              <span class="tracking-kicker">CURRENT STATUS</span>
+              <h3 id="trackingStatus">Restaurant is preparing your order</h3>
+            </div>
+            <span class="status-pill" id="trackingStatusPill">Preparing</span>
+          </div>
+
+          <div class="tracking-timeline" id="trackingTimeline">
+            <div class="timeline-item active done" data-step="0">
+              <div class="timeline-icon"><i class="fa-solid fa-check"></i></div>
+              <div><strong>Order confirmed</strong><span>We've received your order</span></div>
+            </div>
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item active current" data-step="1">
+              <div class="timeline-icon"><i class="fa-solid fa-fire-burner"></i></div>
+              <div><strong>Restaurant preparing</strong><span>Your food is being freshly prepared</span></div>
+            </div>
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item" data-step="2">
+              <div class="timeline-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+              <div><strong>Picked up</strong><span>Rider has collected your order</span></div>
+            </div>
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item" data-step="3">
+              <div class="timeline-icon"><i class="fa-solid fa-motorcycle"></i></div>
+              <div><strong>On the way</strong><span>Your rider is heading to you</span></div>
+            </div>
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item" data-step="4">
+              <div class="timeline-icon"><i class="fa-solid fa-house-circle-check"></i></div>
+              <div><strong>Delivered</strong><span>Enjoy your meal!</span></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="rider-card">
+          <div class="rider-card-top">
+            <div><span class="tracking-kicker">YOUR RIDER</span><h3>Meet your delivery partner</h3></div>
+            <span class="rider-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+          </div>
+
+          <div class="rider-profile">
+            <div class="rider-avatar-wrap">
+              <img src="https://i.pravatar.cc/120?img=68" alt="Rider Aarav">
+              <span class="online-dot"></span>
+            </div>
+            <div class="rider-info">
+              <strong>Aarav Sharma</strong>
+              <span>Delivery Partner · 1.8k deliveries</span>
+              <small><i class="fa-solid fa-motorcycle"></i> Honda Activa · GJ 01 TL 4821</small>
+            </div>
+          </div>
+
+          <div class="rider-actions">
+            <button class="rider-action" id="callRider"><i class="fa-solid fa-phone"></i><span>Call</span></button>
+            <button class="rider-action primary" id="chatRider"><i class="fa-regular fa-comment-dots"></i><span>Chat</span></button>
+          </div>
+
+          <div class="delivery-note">
+            <div class="delivery-note-icon"><i class="fa-solid fa-note-sticky"></i></div>
+            <div><span>DELIVERY NOTE</span><p>Leave the order at the door. Please ring the bell once.</p></div>
+          </div>
+
+          <button class="next-update-btn" id="simulateNextStatus">
+            Simulate next update <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </aside>
+      </div>
+
+      <div class="tracking-footer">
+        <div><i class="fa-solid fa-shield-heart"></i><span>Your order is protected by <strong>TastyLoop Care</strong></span></div>
+        <span class="demo-label">DEMO LIVE TRACKING</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastText">Added to cart</span>
+  </div>
+
+
+  <script src="script.js"></script>
+<script src="phase6-patch.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Orders | TastyLoop Admin</title>
+
+
+  <!-- GOOGLE FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+
+  <!-- ADMIN + ORDERS CSS -->
+
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="orders.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       SIDEBAR
+  ====================================================== -->
+
+  <aside class="admin-sidebar" id="adminSidebar">
+
+  <div class="admin-logo">
+
+    <div class="admin-logo-icon">
+      <i class="fa-solid fa-utensils"></i>
+    </div>
+
+    <div class="admin-logo-text">
+      <strong>Tasty<span>Loop</span></strong>
+      <span>ADMIN PANEL</span>
+    </div>
+
+  </div>
+
+  <!-- MAIN MENU -->
+
+  <nav class="admin-nav">
+
+  <div class="admin-menu-title">
+    MAIN MENU
+  </div>
+
+  <a href="admin.html" class="admin-nav-item">
+    <i class="fa-solid fa-chart-line"></i>
+    <span>Dashboard</span>
+  </a>
+
+  <a href="products.html" class="admin-nav-item">
+    <i class="fa-solid fa-box-open"></i>
+    <span>Products</span>
+    <b>24</b>
+  </a>
+
+  <a href="orders.html" class="admin-nav-item active">
+    <i class="fa-solid fa-receipt"></i>
+    <span>Orders</span>
+    <b>12</b>
+  </a>
+
+  <a href="customers.html" class="admin-nav-item">
+    <i class="fa-solid fa-users"></i>
+    <span>Customers</span>
+  </a>
+
+  <a href="offers.html" class="admin-nav-item">
+    <i class="fa-solid fa-tag"></i>
+    <span>Offers &amp; Coupons</span>
+  </a>
+
+
+  <div class="admin-menu-title management-title">
+    MANAGEMENT
+  </div>
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-store"></i>
+    <span>Restaurants</span>
+  </a>
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-layer-group"></i>
+    <span>Categories</span>
+  </a>
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-star"></i>
+    <span>Reviews</span>
+  </a>
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-gear"></i>
+    <span>Settings</span>
+  </a>
+
+</nav>
+
+  <div class="admin-sidebar-bottom">
+
+    <a href="../TastyLoop/index.html" class="admin-nav-item">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      <span>Customer Website</span>
+    </a>
+
+  </div>
+
+</aside>
+
+<button
+  class="sidebar-toggle-simple"
+  id="sidebarToggleSimple"
+  type="button"
+  aria-label="Toggle sidebar"
+  onclick="toggleSimpleSidebar()"
+>
+  <i class="fa-solid fa-chevron-left"></i>
+</button>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main class="admin-main">
+
+
+    <!-- ===================================================
+         HEADER
+    ==================================================== -->
+
+    <header class="admin-header">
+
+  <div class="header-title">
+
+    <span>CONTROL CENTER</span>
+
+    <strong>Orders</strong>
+
+  </div>
+
+
+  <div class="header-actions">
+
+    <div class="admin-search">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <input
+        type="text"
+        id="productSearch"
+        placeholder="Search..."
+      >
+
+      <kbd>⌘ K</kbd>
+
+    </div>
+
+
+    <button
+      class="header-icon-btn"
+      id="notificationBtn"
+      type="button"
+      aria-label="Notifications"
+    >
+
+      <i class="fa-regular fa-bell"></i>
+
+      <b class="notification-dot"></b>
+
+    </button>
+
+
+    <button
+      class="admin-profile-btn"
+      id="headerProfileBtn"
+      type="button"
+    >
+
+      <img
+        class="admin-avatar-img"
+        src="https://i.pravatar.cc/100?img=12"
+        alt="Admin"
+      >
+
+      <span class="admin-profile-text">
+
+        <strong>Admin</strong>
+
+        <small>Administrator</small>
+
+      </span>
+
+      <i class="fa-solid fa-chevron-down"></i>
+
+    </button>
+
+  </div>
+
+</header>
+
+
+
+    <!-- ===================================================
+         CONTENT
+    ==================================================== -->
+
+    <div class="admin-content orders-page">
+
+
+      <!-- PAGE HEADING -->
+
+      <section class="orders-heading">
+
+        <div class="orders-heading-left">
+
+          <span class="eyebrow">
+            ORDER MANAGEMENT
+          </span>
+
+
+          <h1>
+            Orders
+          </h1>
+
+
+          <p>
+            Track, manage and update customer orders.
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           ORDER STATS
+      ================================================== -->
+
+      <section class="order-mini-stats">
+
+
+        <!-- TOTAL -->
+
+        <div class="order-mini-card">
+
+          <div class="mini-icon">
+
+
+<i class="fa-solid fa-receipt"></i>
+
+          </div>
+
+
+          <div>
+
+            <strong id="totalOrders">
+              0
+            </strong>
+
+            <span>
+              Total Orders
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- PENDING -->
+
+        <div class="order-mini-card">
+
+          <div class="mini-icon">
+
+            <i class="fa-regular fa-clock"></i>
+
+          </div>
+
+
+          <div>
+
+            <strong id="pendingOrders">
+              0
+            </strong>
+
+            <span>
+              Pending
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- DELIVERY -->
+
+        <div class="order-mini-card">
+
+          <div class="mini-icon">
+          <i class="fa-solid fa-motorcycle"></i>
+          </div>
+
+
+          <div>
+
+            <strong id="deliveryOrders">
+              0
+            </strong>
+
+            <span>
+              Out for Delivery
+            </span>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- DELIVERED -->
+
+        <div class="order-mini-card">
+
+          <div class="mini-icon">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+          </div>
+
+
+          <div>
+
+            <strong id="deliveredOrders">
+              0
+            </strong>
+
+            <span>
+              Delivered
+            </span>
+
+          </div>
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- =================================================
+           TOOLBAR
+      ================================================== -->
+
+      <section class="orders-toolbar">
+
+
+        <!-- ORDER SEARCH -->
+
+        <div class="order-search">
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="text"
+            id="tableOrderSearch"
+            placeholder="Search order ID, customer or restaurant..."
+          >
+
+        </div>
+
+
+        <!-- STATUS FILTER -->
+
+        <div class="order-filter">
+
+          <select id="orderStatusFilter">
+
+            <option value="all">
+              All Status
+            </option>
+
+            <option value="pending">
+              Pending
+            </option>
+
+            <option value="preparing">
+              Preparing
+            </option>
+
+            <option value="delivery">
+              Out for Delivery
+            </option>
+
+            <option value="delivered">
+              Delivered
+            </option>
+
+            <option value="cancelled">
+              Cancelled
+            </option>
+
+          </select>
+
+        </div>
+
+
+      </section>
+
+
+
+      <!-- =================================================
+           ORDERS TABLE
+      ================================================== -->
+
+      <section class="orders-table-wrap">
+
+
+        <table class="orders-table">
+
+
+          <thead>
+
+            <tr>
+
+              <th>
+                Order
+              </th>
+
+              <th>
+                Customer
+              </th>
+
+              <th>
+                Restaurant
+              </th>
+
+              <th>
+                Items
+              </th>
+
+              <th>
+                Amount
+              </th>
+
+              <th>
+                Status
+              </th>
+
+              <th>
+                Action
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody id="ordersTableBody">
+
+            <!-- ORDERS WILL BE LOADED BY orders.js -->
+
+          </tbody>
+
+
+        </table>
+
+
+      </section>
+
+
+
+      <!-- =================================================
+           FOOTER
+      ================================================== -->
+
+      <div class="orders-footer">
+
+        <span id="ordersCount">
+          Showing 0 orders
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </main>
+
+  <script src="admin.js"></script>
+  <script src="orders.js"></script>
+
+
+</body>
+
+</html>

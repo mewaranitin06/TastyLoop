@@ -1,0 +1,733 @@
+/* =========================================================
+   TASTYLOOP ADMIN — OFFERS & COUPONS
+   Page-specific CSS only
+========================================================= */
+
+.offers-page {
+  width: 100%;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.offers-heading {
+  margin-bottom: 28px;
+}
+
+.offers-heading .eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--orange);
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.offers-heading h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.offers-heading p {
+  margin: 8px 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   CREATE OFFER BUTTON
+========================================================= */
+
+.create-offer-btn {
+  border: 0;
+  border-radius: 10px;
+  background: var(--orange);
+  color: #fff;
+  padding: 12px 17px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 18px rgba(255, 92, 56, 0.18);
+  transition: 0.2s ease;
+}
+
+.create-offer-btn:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.offers-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.offer-summary-card {
+  min-height: 104px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: var(--shadow);
+}
+
+.summary-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 17px;
+}
+
+.summary-icon.orange {
+  color: var(--orange);
+  background: #fff0eb;
+}
+
+.summary-icon.green {
+  color: #14a56a;
+  background: #eaf9f2;
+}
+
+.summary-icon.blue {
+  color: #4778e8;
+  background: #edf3ff;
+}
+
+.summary-icon.purple {
+  color: #8154e8;
+  background: #f2edff;
+}
+
+.offer-summary-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.offer-summary-card strong {
+  display: block;
+  color: var(--text);
+  font-size: 23px;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   OFFERS SECTION
+========================================================= */
+
+.offers-section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.offers-section-head {
+  padding: 17px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.offers-section-head h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.offers-section-head p {
+  margin: 5px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.offers-filters {
+  display: flex;
+  gap: 9px;
+}
+
+.offers-filters select {
+  height: 37px;
+  min-width: 125px;
+  padding: 0 11px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--text);
+  font-size: 11px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   COUPON GRID
+========================================================= */
+
+.coupons-grid {
+  padding: 17px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+
+/* =========================================================
+   COUPON CARD
+========================================================= */
+
+.coupon-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  transition: 0.2s ease;
+}
+
+.coupon-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(20, 30, 50, 0.08);
+}
+
+.coupon-card-top {
+  min-height: 58px;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, #fffaf8 0%, #fff 100%);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.coupon-card-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coupon-code {
+  padding: 6px 9px;
+  border: 1px dashed #ff8b70;
+  border-radius: 7px;
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.coupon-status {
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.coupon-status.active {
+  color: #119665;
+  background: #eaf9f2;
+}
+
+.coupon-status.inactive {
+  color: #8490a1;
+  background: #f1f3f6;
+}
+
+.coupon-more-btn {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  color: #8994a5;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.coupon-more-btn:hover {
+  background: #f4f6f8;
+  color: var(--text);
+}
+
+.coupon-card-body {
+  padding: 17px 15px;
+}
+
+.coupon-type {
+  font-size: 9px;
+  font-weight: 700;
+  color: #8190a5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.coupon-card-body h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.coupon-message {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.coupon-meta {
+  margin-top: 15px;
+  padding-top: 13px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.coupon-meta-item span {
+  display: block;
+  font-size: 9px;
+  color: #8a96a8;
+  margin-bottom: 4px;
+}
+
+.coupon-meta-item strong {
+  font-size: 11px;
+  color: var(--text);
+}
+
+.coupon-card-footer {
+  padding: 11px 15px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.coupon-redemptions {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.coupon-action-btn {
+  border: 0;
+  background: transparent;
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.offers-empty-state {
+  grid-column: 1 / -1;
+  padding: 55px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.offers-empty-state i {
+  font-size: 30px;
+  margin-bottom: 12px;
+  color: #aeb7c5;
+}
+
+.offers-empty-state h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.offers-empty-state p {
+  margin: 6px 0 0;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.offer-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(16, 24, 40, 0.48);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.offer-modal-overlay.show {
+  display: flex;
+}
+
+.offer-modal {
+  width: min(680px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18);
+}
+
+.offer-modal-header {
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.modal-eyebrow {
+  display: block;
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  margin-bottom: 5px;
+}
+
+.offer-modal-header h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 21px;
+}
+
+.modal-close-btn {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 9px;
+  background: #f4f5f7;
+  color: #707b8c;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   OFFER TYPE
+========================================================= */
+
+.offer-type-selector {
+  padding: 18px 22px 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.offer-type-option {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.offer-type-option input {
+  display: none;
+}
+
+.offer-type-option.active {
+  border-color: var(--orange);
+  background: #fff7f4;
+}
+
+.offer-type-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #fff0eb;
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offer-type-option strong {
+  display: block;
+  color: var(--text);
+  font-size: 11px;
+}
+
+.offer-type-option small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.offer-form-grid {
+  padding: 17px 22px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.form-group {
+  min-width: 0;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--text);
+  padding: 10px 11px;
+  font-family: inherit;
+  font-size: 11px;
+  outline: none;
+}
+
+.form-group input {
+  height: 39px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 75px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--orange);
+}
+
+
+/* =========================================================
+   DISPLAY OPTIONS
+========================================================= */
+
+.display-options {
+  margin: 0 22px 17px;
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: #fafbfc;
+}
+
+.display-options-title {
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.display-option {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 18px;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+
+.display-option input {
+  accent-color: var(--orange);
+  margin-right: 7px;
+}
+
+.display-option span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.display-option i {
+  margin-right: 4px;
+  color: var(--orange);
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.offer-modal-footer {
+  padding: 15px 22px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.modal-cancel-btn,
+.modal-publish-btn {
+  min-height: 38px;
+  border-radius: 9px;
+  padding: 0 15px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modal-cancel-btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--muted);
+}
+
+.modal-publish-btn {
+  border: 0;
+  background: var(--orange);
+  color: #fff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .offers-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .coupons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .offers-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .coupons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offers-section-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .offers-filters {
+    width: 100%;
+  }
+
+  .offers-filters select {
+    flex: 1;
+  }
+
+  .offer-type-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  .offers-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-modal-overlay {
+    padding: 10px;
+  }
+
+  .offer-modal-header,
+  .offer-form-grid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .display-options {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .offer-modal-footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+}
+
+/* =========================================================
+   OFFERS — SIDEBAR POSITION FIX
+========================================================= */
+
+.offers-page {
+  position: relative;
+}
+
+.admin-sidebar .admin-nav {
+  padding-top: 0;
+}
+
+.admin-sidebar .admin-menu-title:first-child {
+  margin-top: 0;
+}

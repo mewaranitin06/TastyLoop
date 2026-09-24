@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TastyLoop Admin — Offers & Coupons</title>
+
+  <!-- SAME COMMON FONTS AS CUSTOMERS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- COMMON ADMIN CSS -->
+  <link rel="stylesheet" href="admin.css">
+
+  <!-- OFFERS PAGE CSS -->
+  <link rel="stylesheet" href="offers.css">
+
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="admin-sidebar" id="adminSidebar">
+
+      <div class="admin-logo">
+
+        <div class="admin-logo-icon">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+
+        <div class="admin-logo-text">
+          <strong>Tasty<span>Loop</span></strong>
+          <span>ADMIN PANEL</span>
+        </div>
+
+      </div>
+
+
+      <nav class="admin-nav">
+
+        <div class="admin-menu-title">
+          MAIN MENU
+        </div>
+
+
+        <a href="admin.html" class="admin-nav-item">
+
+          <i class="fa-solid fa-chart-line"></i>
+
+          <span>
+            Dashboard
+          </span>
+
+        </a>
+
+
+        <a href="products.html" class="admin-nav-item">
+
+          <i class="fa-solid fa-box-open"></i>
+
+          <span>
+            Products
+          </span>
+
+          <b>24</b>
+
+        </a>
+
+
+        <a href="orders.html" class="admin-nav-item">
+
+          <i class="fa-solid fa-receipt"></i>
+
+          <span>
+            Orders
+          </span>
+
+          <b>12</b>
+
+        </a>
+
+
+        <a href="customers.html" class="admin-nav-item">
+
+          <i class="fa-solid fa-users"></i>
+
+          <span>
+            Customers
+          </span>
+
+        </a>
+
+
+        <a href="offers.html" class="admin-nav-item active">
+
+          <i class="fa-solid fa-tag"></i>
+
+          <span>
+            Offers &amp; Coupons
+          </span>
+
+        </a>
+
+
+        <div class="admin-menu-title management-title">
+          MANAGEMENT
+        </div>
+
+
+        <a href="#" class="admin-nav-item">
+
+          <i class="fa-solid fa-store"></i>
+
+          <span>
+            Restaurants
+          </span>
+
+        </a>
+
+
+        <a href="#" class="admin-nav-item">
+
+          <i class="fa-solid fa-layer-group"></i>
+
+          <span>
+            Categories
+          </span>
+
+        </a>
+
+
+        <a href="#" class="admin-nav-item">
+
+          <i class="fa-solid fa-star"></i>
+
+          <span>
+            Reviews
+          </span>
+
+        </a>
+
+
+        <a href="#" class="admin-nav-item">
+
+          <i class="fa-solid fa-gear"></i>
+
+          <span>
+            Settings
+          </span>
+
+        </a>
+
+      </nav>
+
+
+      <div class="admin-sidebar-bottom">
+
+        <a href="../TastyLoop/index.html" class="admin-nav-item">
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+          <span>
+            Customer Website
+          </span>
+
+        </a>
+
+      </div>
+
+    </aside>
+
+
+    <!-- SIDEBAR TOGGLE -->
+
+    <button
+      class="sidebar-toggle-simple"
+      id="sidebarToggleSimple"
+      type="button"
+      aria-label="Toggle sidebar"
+      onclick="toggleSimpleSidebar()"
+    >
+
+      <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="admin-main">
+
+
+      <!-- ===================================================
+           HEADER
+      ==================================================== -->
+
+      <header class="admin-header">
+
+        <div class="header-title">
+
+          <span>
+            CONTROL CENTER
+          </span>
+
+          <strong>
+            Offers &amp; Coupons
+          </strong>
+
+        </div>
+
+
+        <div class="header-actions">
+
+
+          <!-- SEARCH -->
+
+          <div class="admin-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+              type="text"
+              id="offerSearch"
+              placeholder="Search..."
+            >
+
+            <kbd>
+              ⌘ K
+            </kbd>
+
+          </div>
+
+
+          <!-- NOTIFICATION -->
+
+          <button
+            class="header-icon-btn"
+            id="notificationBtn"
+            type="button"
+            aria-label="Notifications"
+          >
+
+            <i class="fa-regular fa-bell"></i>
+
+            <b class="notification-dot"></b>
+
+          </button>
+
+
+          <!-- PROFILE -->
+
+          <button
+            class="admin-profile-btn"
+            id="headerProfileBtn"
+            type="button"
+          >
+
+            <img
+              class="admin-avatar-img"
+              src="https://i.pravatar.cc/100?img=12"
+              alt="Admin"
+            >
+
+            <span class="admin-profile-text">
+
+              <strong>
+                Admin
+              </strong>
+
+              <small>
+                Administrator
+              </small>
+
+            </span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+          </button>
+
+
+        </div>
+
+      </header>
+
+
+      <!-- ===================================================
+           CONTENT
+      ==================================================== -->
+
+      <div class="admin-content offers-page">
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="offers-heading">
+
+          <div>
+
+            <span class="eyebrow">
+              OFFER MANAGEMENT
+            </span>
+
+            <h1>
+              Offers &amp; Coupons
+            </h1>
+
+            <p>
+              Create, manage and publish promotional campaigns.
+            </p>
+
+            <button
+              class="create-offer-btn"
+              id="createOfferBtn"
+              type="button"
+            >
+
+              <i class="fa-solid fa-plus"></i>
+
+              Create Offer
+
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- =================================================
+             STATS
+        ================================================== -->
+
+        <section class="offers-summary">
+
+
+          <div class="offer-summary-card">
+
+            <div class="summary-icon orange">
+
+              <i class="fa-solid fa-tags"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Total Offers
+              </span>
+
+              <strong id="totalOffers">
+                0
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="offer-summary-card">
+
+            <div class="summary-icon green">
+
+              <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Active Offers
+              </span>
+
+              <strong id="activeOffers">
+                0
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="offer-summary-card">
+
+            <div class="summary-icon blue">
+
+              <i class="fa-solid fa-ticket"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Redemptions
+              </span>
+
+              <strong id="totalRedemptions">
+                0
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="offer-summary-card">
+
+            <div class="summary-icon purple">
+
+              <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+            <div>
+
+              <span>
+                Expiring Soon
+              </span>
+
+              <strong id="expiringOffers">
+                0
+              </strong>
+
+            </div>
+
+          </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             PROMOTIONAL OFFERS
+        ================================================== -->
+
+        <section class="offers-section">
+
+
+          <div class="offers-section-head">
+
+            <div>
+
+              <h2>
+                Promotional Offers
+              </h2>
+
+              <p>
+                Manage your active campaigns
+              </p>
+
+            </div>
+
+
+            <div class="offers-filters">
+
+              <select id="statusFilter">
+
+                <option value="all">
+                  All Status
+                </option>
+
+                <option value="active">
+                  Active
+                </option>
+
+                <option value="inactive">
+                  Inactive
+                </option>
+
+              </select>
+
+
+              <select id="typeFilter">
+
+                <option value="all">
+                  All Types
+                </option>
+
+                <option value="coupon">
+                  Coupon
+                </option>
+
+                <option value="banner">
+                  Banner
+                </option>
+
+                <option value="campaign">
+                  Campaign
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <!-- CARDS WILL COME FROM offers.js -->
+
+          <div
+            class="coupons-grid"
+            id="offersGrid"
+          ></div>
+
+
+        </section>
+
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- =====================================================
+       CREATE / EDIT OFFER MODAL
+  ====================================================== -->
+
+  <div
+    class="offer-modal-overlay"
+    id="offerModal"
+  >
+
+    <div class="offer-modal">
+
+
+      <div class="offer-modal-header">
+
+        <div>
+
+          <span class="modal-eyebrow">
+            CAMPAIGN SETUP
+          </span>
+
+          <h2 id="offerModalTitle">
+            Create Offer
+          </h2>
+
+        </div>
+
+
+        <button
+          type="button"
+          id="closeOfferModal"
+          class="modal-close-btn"
+          aria-label="Close"
+        >
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+      </div>
+
+
+      <form id="offerForm">
+
+
+        <!-- OFFER TYPE -->
+
+        <div class="offer-type-selector">
+
+
+          <label class="offer-type-option active">
+
+            <input
+              type="radio"
+              name="offerType"
+              value="coupon"
+              checked
+            >
+
+            <span class="offer-type-icon">
+              <i class="fa-solid fa-ticket"></i>
+            </span>
+
+            <span>
+
+              <strong>
+                Coupon
+              </strong>
+
+              <small>
+                Discount code
+              </small>
+
+            </span>
+
+          </label>
+
+
+          <label class="offer-type-option">
+
+            <input
+              type="radio"
+              name="offerType"
+              value="banner"
+            >
+
+            <span class="offer-type-icon">
+              <i class="fa-solid fa-image"></i>
+            </span>
+
+            <span>
+
+              <strong>
+                Banner
+              </strong>
+
+              <small>
+                Website promotion
+              </small>
+
+            </span>
+
+          </label>
+
+
+          <label class="offer-type-option">
+
+            <input
+              type="radio"
+              name="offerType"
+              value="campaign"
+            >
+
+            <span class="offer-type-icon">
+              <i class="fa-solid fa-bullhorn"></i>
+            </span>
+
+            <span>
+
+              <strong>
+                Campaign
+              </strong>
+
+              <small>
+                Festival campaign
+              </small>
+
+            </span>
+
+          </label>
+
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <div class="offer-form-grid">
+
+
+          <div class="form-group full">
+
+            <label for="offerTitle">
+              Offer Title
+            </label>
+
+            <input
+              type="text"
+              id="offerTitle"
+              placeholder="e.g. Weekend Special"
+              required
+            >
+
+          </div>
+
+
+          <div
+            class="form-group"
+            id="couponCodeGroup"
+          >
+
+            <label for="couponCode">
+              Coupon Code
+            </label>
+
+            <input
+              type="text"
+              id="couponCode"
+              placeholder="e.g. TASTY50"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="discountValue">
+              Discount
+            </label>
+
+            <input
+              type="text"
+              id="discountValue"
+              placeholder="e.g. 50% OFF"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group full">
+
+            <label for="offerMessage">
+              Customer Message
+            </label>
+
+            <textarea
+              id="offerMessage"
+              rows="3"
+              placeholder="Write a short message customers will see..."
+            ></textarea>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="minOrder">
+              Minimum Order
+            </label>
+
+            <input
+              type="number"
+              id="minOrder"
+              min="0"
+              placeholder="e.g. 499"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="offerImage">
+              Offer Image URL
+            </label>
+
+            <input
+              type="url"
+              id="offerImage"
+              placeholder="https://..."
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="startDate">
+              Start Date
+            </label>
+
+            <input
+              type="date"
+              id="startDate"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="endDate">
+              End Date
+            </label>
+
+            <input
+              type="date"
+              id="endDate"
+              required
+            >
+
+          </div>
+
+
+        </div>
+
+
+        <!-- DISPLAY OPTIONS -->
+
+        <div class="display-options">
+
+          <div class="display-options-title">
+            Display On
+          </div>
+
+
+          <label class="display-option">
+
+            <input
+              type="checkbox"
+              id="showHomepage"
+              checked
+            >
+
+            <span>
+              <i class="fa-solid fa-house"></i>
+              Homepage Banner
+            </span>
+
+          </label>
+
+
+          <label class="display-option">
+
+            <input
+              type="checkbox"
+              id="showPopup"
+              checked
+            >
+
+            <span>
+              <i class="fa-solid fa-bell"></i>
+              Popup Notification
+            </span>
+
+          </label>
+
+
+          <label class="display-option">
+
+            <input
+              type="checkbox"
+              id="showOffers"
+              checked
+            >
+
+            <span>
+              <i class="fa-solid fa-tags"></i>
+              Offers Section
+            </span>
+
+          </label>
+
+        </div>
+
+
+        <!-- MODAL FOOTER -->
+
+        <div class="offer-modal-footer">
+
+          <button
+            type="button"
+            class="modal-cancel-btn"
+            id="cancelOfferBtn"
+          >
+            Cancel
+          </button>
+
+
+          <button
+            type="submit"
+            class="modal-publish-btn"
+          >
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Publish Offer
+
+          </button>
+
+        </div>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="admin.js"></script>
+  <script src="offers.js"></script>
+
+</body>
+
+</html>

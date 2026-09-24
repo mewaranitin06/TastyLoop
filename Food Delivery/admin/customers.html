@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TastyLoop Admin — Customers</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="customers.css">
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="admin-sidebar" id="adminSidebar">
+
+      <div class="admin-logo">
+        <div class="admin-logo-icon">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+
+        <div class="admin-logo-text">
+          <strong>Tasty<span>Loop</span></strong>
+          <span>ADMIN PANEL</span>
+        </div>
+      </div>
+
+
+      <nav class="admin-nav">
+
+        <div class="admin-menu-title">
+          MAIN MENU
+        </div>
+
+        <a href="admin.html" class="admin-nav-item">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="products.html" class="admin-nav-item">
+          <i class="fa-solid fa-box-open"></i>
+          <span>Products</span>
+          <b>24</b>
+        </a>
+
+        <a href="orders.html" class="admin-nav-item">
+          <i class="fa-solid fa-receipt"></i>
+          <span>Orders</span>
+          <b>12</b>
+        </a>
+
+        <a href="customers.html" class="admin-nav-item active">
+          <i class="fa-solid fa-users"></i>
+          <span>Customers</span>
+        </a>
+
+        <a href="offers.html" class="admin-nav-item">
+          <i class="fa-solid fa-tag"></i>
+          <span>Offers &amp; Coupons</span>
+        </a>
+
+
+        <div class="admin-menu-title management-title">
+          MANAGEMENT
+        </div>
+
+        <a href="#" class="admin-nav-item">
+          <i class="fa-solid fa-store"></i>
+          <span>Restaurants</span>
+        </a>
+
+        <a href="#" class="admin-nav-item">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>Categories</span>
+        </a>
+
+        <a href="#" class="admin-nav-item">
+          <i class="fa-solid fa-star"></i>
+          <span>Reviews</span>
+        </a>
+
+        <a href="#" class="admin-nav-item">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+
+      </nav>
+
+
+      <div class="admin-sidebar-bottom">
+
+        <a href="../TastyLoop/index.html" class="admin-nav-item">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>Customer Website</span>
+        </a>
+
+      </div>
+
+    </aside>
+
+    <button class="sidebar-toggle-simple" id="sidebarToggleSimple" type="button" aria-label="Toggle sidebar"
+      onclick="toggleSimpleSidebar()">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <!-- MAIN -->
+    <main class="admin-main">
+
+      <!-- HEADER -->
+      <header class="admin-header">
+
+        <div class="header-title">
+
+          <span>CONTROL CENTER</span>
+
+          <strong>Customers</strong>
+
+        </div>
+
+
+        <div class="header-actions">
+
+          <div class="admin-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text" id="productSearch" placeholder="Search...">
+
+            <kbd>⌘ K</kbd>
+
+          </div>
+
+
+          <button class="header-icon-btn" id="notificationBtn" type="button" aria-label="Notifications">
+
+            <i class="fa-regular fa-bell"></i>
+
+            <b class="notification-dot"></b>
+
+          </button>
+
+
+          <button class="admin-profile-btn" id="headerProfileBtn" type="button">
+
+            <img class="admin-avatar-img" src="https://i.pravatar.cc/100?img=12" alt="Admin">
+
+            <span class="admin-profile-text">
+
+              <strong>Admin</strong>
+
+              <small>Administrator</small>
+
+            </span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+          </button>
+
+        </div>
+
+      </header>
+
+
+      <!-- CONTENT -->
+      <div class="admin-content customers-page">
+
+        <!-- PAGE HEADING -->
+        <section class="customers-heading">
+
+          <div>
+            <span class="eyebrow">
+              CUSTOMER MANAGEMENT
+            </span>
+
+            <h1>Customers</h1>
+
+            <p>
+              Manage customer accounts, orders and activity.
+            </p>
+          </div>
+
+        </section>
+
+
+        <!-- STATS -->
+        <section class="customer-stats">
+
+          <div class="customer-stat-card">
+
+            <div class="stat-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div>
+              <span>Total Customers</span>
+              <strong id="totalCustomers">0</strong>
+            </div>
+
+          </div>
+
+
+          <div class="customer-stat-card">
+
+            <div class="stat-icon green">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+
+            <div>
+              <span>Active Customers</span>
+              <strong id="activeCustomers">0</strong>
+            </div>
+
+          </div>
+
+
+          <div class="customer-stat-card">
+
+            <div class="stat-icon blue">
+              <i class="fa-solid fa-user-plus"></i>
+            </div>
+
+            <div>
+              <span>New Customers</span>
+              <strong id="newCustomers">0</strong>
+            </div>
+
+          </div>
+
+
+          <div class="customer-stat-card">
+
+            <div class="stat-icon purple">
+              <i class="fa-solid fa-repeat"></i>
+            </div>
+
+            <div>
+              <span>Repeat Customers</span>
+              <strong id="repeatCustomers">0</strong>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- TABLE CARD -->
+        <section class="customers-table-card">
+
+          <div class="table-toolbar">
+
+            <div>
+              <h2>Customer List</h2>
+
+              <span id="customersCount">
+                Showing 0 customers
+              </span>
+            </div>
+
+            <div class="table-filters">
+
+              <div class="table-search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" id="tableCustomerSearch" placeholder="Search customer...">
+
+              </div>
+
+              <select id="customerStatusFilter">
+
+                <option value="all">
+                  All Status
+                </option>
+
+                <option value="active">
+                  Active
+                </option>
+
+                <option value="inactive">
+                  Inactive
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <div class="table-wrapper">
+
+            <table class="customers-table">
+
+              <thead>
+
+                <tr>
+                  <th>CUSTOMER</th>
+                  <th>CONTACT</th>
+                  <th>ORDERS</th>
+                  <th>TOTAL SPENT</th>
+                  <th>LAST ORDER</th>
+                  <th>STATUS</th>
+                  <th>ACTION</th>
+                </tr>
+
+              </thead>
+
+              <tbody id="customersTableBody"></tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <script src="admin.js"></script>
+  <script src="customers.js"></script>
+
+</body>
+
+</html>

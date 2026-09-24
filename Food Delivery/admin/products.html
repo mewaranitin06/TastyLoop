@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Products | TastyLoop Admin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="products.css">
+
+</head>
+
+<body>
+
+  <!-- =====================================================
+       SIDEBAR
+  ====================================================== -->
+
+ <aside class="admin-sidebar" id="adminSidebar">
+
+  <!-- LOGO -->
+  <div class="admin-logo">
+
+    <div class="admin-logo-icon">
+      <i class="fa-solid fa-utensils"></i>
+    </div>
+
+    <div class="admin-logo-text">
+      <strong>Tasty<span>Loop</span></strong>
+      <small>ADMIN PANEL</small>
+    </div>
+
+  </div>
+
+<!-- MAIN MENU -->
+<div class="admin-menu-title">
+  MAIN MENU
+</div>
+
+<nav class="admin-navigation">
+
+  <a href="admin.html" class="admin-nav-item">
+    <i class="fa-solid fa-chart-line"></i>
+    <span>Dashboard</span>
+  </a>
+
+  <a href="products.html" class="admin-nav-item active">
+    <i class="fa-solid fa-box-open"></i>
+    <span>Products</span>
+    <b>24</b>
+  </a>
+
+  <a href="orders.html" class="admin-nav-item">
+    <i class="fa-solid fa-receipt"></i>
+    <span>Orders</span>
+    <b>12</b>
+  </a>
+
+  <a href="customers.html" class="admin-nav-item">
+    <i class="fa-solid fa-users"></i>
+    <span>Customers</span>
+  </a>
+
+  <a href="orders.html" class="admin-nav-item">
+    <i class="fa-solid fa-tag"></i>
+    <span>Offers &amp; Coupons</span>
+  </a>
+
+</nav>
+
+
+<!-- MANAGEMENT -->
+<div class="admin-menu-title">
+  MANAGEMENT
+</div>
+
+<nav class="admin-navigation">
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-store"></i>
+    <span>Restaurants</span>
+  </a>
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-layer-group"></i>
+    <span>Categories</span>
+  </a>
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-star"></i>
+    <span>Reviews</span>
+  </a>
+
+  <a href="#" class="admin-nav-item">
+    <i class="fa-solid fa-gear"></i>
+    <span>Settings</span>
+  </a>
+
+</nav>
+
+
+  <!-- CUSTOMER WEBSITE -->
+  <div class="admin-sidebar-bottom">
+
+    <a href="../TastyLoop/index.html" class="admin-nav-item">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      <span>Customer Website</span>
+    </a>
+
+  </div>
+
+</aside>
+
+<button
+  class="sidebar-toggle-simple"
+  id="sidebarToggleSimple"
+  type="button"
+  aria-label="Toggle sidebar"
+  onclick="toggleSimpleSidebar()"
+>
+  <i class="fa-solid fa-chevron-left"></i>
+</button>
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main class="admin-main">
+
+    <!-- HEADER -->
+
+    <header class="admin-header">
+
+  <div class="header-title">
+
+    <span>CONTROL CENTER</span>
+
+    <strong>Products</strong>
+
+  </div>
+
+
+  <div class="header-actions">
+
+    <div class="admin-search">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <input
+        type="text"
+        id="productSearch"
+        placeholder="Search products..."
+      >
+
+      <kbd>⌘ K</kbd>
+
+    </div>
+
+
+    <button
+      class="header-icon-btn"
+      id="notificationBtn"
+      type="button"
+      aria-label="Notifications"
+    >
+
+      <i class="fa-regular fa-bell"></i>
+
+      <b class="notification-dot"></b>
+
+    </button>
+
+
+    <button
+      class="admin-profile-btn"
+      id="headerProfileBtn"
+      type="button"
+    >
+
+      <img
+        class="admin-avatar-img"
+        src="https://i.pravatar.cc/100?img=12"
+        alt="Admin"
+      >
+
+      <span class="admin-profile-text">
+
+        <strong>Admin</strong>
+
+        <small>Administrator</small>
+
+      </span>
+
+      <i class="fa-solid fa-chevron-down"></i>
+
+    </button>
+
+  </div>
+
+</header>
+
+
+    <!-- CONTENT -->
+
+    <div class="admin-content products-page">
+
+
+      <!-- PAGE HEADING -->
+
+      <section class="products-heading">
+
+        <div class="products-heading-left">
+
+          <span class="eyebrow">
+            MENU MANAGEMENT
+          </span>
+
+          <h1>Products</h1>
+
+          <p>
+            Manage your food items, pricing, stock and availability.
+          </p>
+
+        </div>
+
+
+        <button
+          class="add-product-btn"
+          id="addProductBtn"
+          type="button"
+        >
+          <i class="fa-solid fa-plus"></i>
+          Add Product
+        </button>
+
+      </section>
+
+
+      <!-- MINI STATS -->
+
+      <section class="product-mini-stats">
+
+        <div class="product-mini-card">
+
+          <div class="mini-top">
+
+            <span class="mini-label">
+              TOTAL PRODUCTS
+            </span>
+
+            <div class="mini-icon">
+              <i class="fa-solid fa-box-open"></i>
+            </div>
+
+          </div>
+
+          <strong
+            class="mini-value"
+            id="totalProducts"
+          >
+            24
+          </strong>
+
+          <span class="mini-note">
+            Across all categories
+          </span>
+
+        </div>
+
+
+        <div class="product-mini-card">
+
+          <div class="mini-top">
+
+            <span class="mini-label">
+              ACTIVE
+            </span>
+
+            <div class="mini-icon">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+          </div>
+
+          <strong
+            class="mini-value"
+            id="activeProducts"
+          >
+            21
+          </strong>
+
+          <span class="mini-note">
+            Currently available
+          </span>
+
+        </div>
+
+
+        <div class="product-mini-card">
+
+          <div class="mini-top">
+
+            <span class="mini-label">
+              LOW STOCK
+            </span>
+
+            <div class="mini-icon">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+
+          </div>
+
+          <strong
+            class="mini-value"
+            id="lowStockProducts"
+          >
+            2
+          </strong>
+
+          <span class="mini-note">
+            Needs attention
+          </span>
+
+        </div>
+
+
+        <div class="product-mini-card">
+
+          <div class="mini-top">
+
+            <span class="mini-label">
+              OUT OF STOCK
+            </span>
+
+            <div class="mini-icon">
+              <i class="fa-solid fa-ban"></i>
+            </div>
+
+          </div>
+
+          <strong
+            class="mini-value"
+            id="outProducts"
+          >
+            1
+          </strong>
+
+          <span class="mini-note">
+            Currently unavailable
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- TOOLBAR -->
+
+      <section class="products-toolbar">
+
+        <div class="product-search">
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input
+            type="text"
+            id="tableProductSearch"
+            placeholder="Search by product or restaurant..."
+          >
+
+        </div>
+
+
+        <div class="product-filters">
+
+          <select id="categoryFilter">
+
+            <option value="all">
+              All Categories
+            </option>
+
+            <option value="Burgers">
+              Burgers
+            </option>
+
+            <option value="Pizza">
+              Pizza
+            </option>
+
+            <option value="Indian">
+              Indian
+            </option>
+
+            <option value="Healthy">
+              Healthy
+            </option>
+
+            <option value="Pasta">
+              Pasta
+            </option>
+
+          </select>
+
+
+          <select id="statusFilter">
+
+            <option value="all">
+              All Status
+            </option>
+
+            <option value="active">
+              Active
+            </option>
+
+            <option value="low">
+              Low Stock
+            </option>
+
+            <option value="out">
+              Out of Stock
+            </option>
+
+          </select>
+
+        </div>
+
+      </section>
+
+
+      <!-- TABLE -->
+
+      <section class="products-table-wrap">
+
+        <table class="products-table">
+
+          <thead>
+
+            <tr>
+              <th>Product</th>
+              <th>Restaurant</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Rating</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+
+          </thead>
+
+
+          <tbody id="productsTableBody">
+
+            <!-- JS WILL RENDER PRODUCTS -->
+
+          </tbody>
+
+        </table>
+
+      </section>
+
+
+      <!-- FOOTER -->
+
+      <div class="products-footer">
+
+        <span
+          class="products-count"
+          id="productsCount"
+        >
+          Showing 8 products
+        </span>
+
+
+        <div class="pagination">
+
+          <button
+            class="page-btn"
+            type="button"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <button
+            class="page-btn active"
+            type="button"
+          >
+            1
+          </button>
+
+          <button
+            class="page-btn"
+            type="button"
+          >
+            2
+          </button>
+
+          <button
+            class="page-btn"
+            type="button"
+          >
+            3
+          </button>
+
+          <button
+            class="page-btn"
+            type="button"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="admin.js"></script>
+  <script src="products.js"></script>
+
+</body>
+</html>

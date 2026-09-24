@@ -1,0 +1,502 @@
+/* =========================================================
+   TASTYLOOP ADMIN — CUSTOMERS
+========================================================= */
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.customers-heading {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--primary);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .11em;
+}
+
+.customers-heading h1 {
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -.5px;
+}
+
+.customers-heading p {
+  margin: 7px 0 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.customer-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+.customer-stat-card {
+  min-height: 105px;
+
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-icon {
+  width: 42px;
+  height: 42px;
+
+  flex: 0 0 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 15px;
+}
+
+.stat-icon.green {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.stat-icon.blue {
+  background: var(--blue-bg);
+  color: var(--blue);
+}
+
+.stat-icon.purple {
+  background: var(--purple-bg);
+  color: var(--purple);
+}
+
+.customer-stat-card span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.customer-stat-card strong {
+  color: var(--text-dark);
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.customers-table-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.table-toolbar {
+  min-height: 78px;
+
+  padding: 17px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.table-toolbar h2 {
+  margin: 0 0 4px;
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.table-toolbar span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.table-filters {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.table-search {
+  width: 205px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  background: #ffffff;
+}
+
+.table-search i {
+  color: #9aa3b2;
+  font-size: 11px;
+}
+
+.table-search input {
+  width: 100%;
+
+  margin-left: 8px;
+
+  border: 0;
+  outline: 0;
+
+  font-size: 11px;
+  color: var(--text-dark);
+}
+
+.table-filters select {
+  height: 36px;
+
+  padding: 0 30px 0 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #687286;
+
+  font-size: 11px;
+
+  outline: 0;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.customers-table {
+  width: 100%;
+  min-width: 850px;
+
+  border-collapse: collapse;
+}
+
+.customers-table th {
+  height: 43px;
+
+  padding: 0 16px;
+
+  background: #fbfcfd;
+
+  border-bottom: 1px solid var(--border);
+
+  color: #8993a4;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  text-align: left;
+  letter-spacing: .05em;
+}
+
+.customers-table td {
+  height: 67px;
+
+  padding: 10px 16px;
+
+  border-bottom: 1px solid #eef1f4;
+
+  color: #566174;
+
+  font-size: 11px;
+}
+
+.customers-table tbody tr:hover {
+  background: #fcfdff;
+}
+
+
+/* =========================================================
+   CUSTOMER CELL
+========================================================= */
+
+.customer-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.customer-avatar {
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.customer-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-name strong {
+  color: var(--text-dark);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.customer-name span {
+  margin-top: 2px;
+
+  color: #9aa3b2;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CUSTOMER CONTACT
+========================================================= */
+
+.customer-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-contact span:first-child {
+  color: var(--text-dark);
+  font-size: 10px;
+}
+
+.customer-contact span:last-child {
+  margin-top: 3px;
+
+  color: #9aa3b2;
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CUSTOMER ORDERS / SPENT
+========================================================= */
+
+.customer-orders {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.customer-spent {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.customer-last-order {
+  color: #7c8798;
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   CUSTOMER STATUS
+========================================================= */
+
+.customer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 5px 8px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.customer-status i {
+  font-size: 5px;
+}
+
+.customer-status.active {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.customer-status.inactive {
+  background: #f3f4f6;
+  color: #8a94a6;
+}
+
+
+/* =========================================================
+   ACTION BUTTON
+========================================================= */
+
+.customer-action-btn {
+  width: 34px;
+  height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #738095;
+
+  cursor: pointer;
+
+  transition: .2s ease;
+}
+
+.customer-action-btn:hover {
+  background: var(--primary-light);
+  border-color: #ffd0c6;
+  color: var(--primary);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.customer-empty {
+  padding: 55px 20px;
+
+  text-align: center;
+}
+
+.customer-empty i {
+  margin-bottom: 10px;
+
+  color: #b5bdc9;
+  font-size: 25px;
+}
+
+.customer-empty strong {
+  display: block;
+
+  color: var(--text-dark);
+
+  font-size: 13px;
+}
+
+.customer-empty p {
+  margin: 5px 0 0;
+
+  color: #9aa3b2;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .customer-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .customer-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .table-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .table-filters {
+    width: 100%;
+  }
+
+  .table-search {
+    flex: 1;
+  }
+
+}
